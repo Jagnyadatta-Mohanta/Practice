@@ -56,3 +56,13 @@ text-decoration: none;
 font-size: 14px;  
 color:#5d5d5d ;
 }
+input:hover{
+box-shadow: 0 4px 8px rgba(26, 128, 75, 0.3);
+transform: scale(1.01);
+transition: 0.3s ease; 
+}
+.btn:hover{
+box-shadow: 0 8px 15px rgba(12, 12, 12, 0.619);
+transform: scale(1.05);
+transition: 0.3s ease; 
+}
