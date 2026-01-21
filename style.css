@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+}
+ body{ 
+    font-family: Arial, sans-serif;
+    background: linear-gradient(100deg, rgb(16, 11, 156),rgba(182,12,204,1)100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+.userfeedback{
+    max-width: 450px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.userfeedback h2{
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+}
+#bio{
+  text-align: center;
+  color: rgba(0, 0, 0, 0.688);
+  margin-bottom: 20px;
+}
+label{
+    display: block; 
+    color: rgba(0, 0, 0, 0.839);
+    padding: 5px;
+}
+input,textarea{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+textarea{
+    width: 100%;
+    resize: none;
+    height: 100px;
+}
+button {
+  background: linear-gradient(to right, #28a745, #20c997);
+  border: none;
+  width: 100%; 
+  margin-bottom: 5px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+#submission{
+    text-align: center;
+    margin-top: 20px; 
+}
+#team{
+    font-size: 15px;
+    padding: 10px;
+}
+input,textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+}
+input:hover,textarea:hover {
+  border-color: #6a5acd;
+}
+input:focus,textarea:focus {
+  outline: none;
+  border-color: #4a00e0;
+  box-shadow: 0 0 8px rgba(74, 0, 224, 0.3);
+} 
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #20c997, #28a745);
+}
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+} 
+.required{
+  color: red;
+}
