@@ -169,7 +169,7 @@
 .terminate-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: #ffffff;
   font-weight: 700;
   font-size: clamp(0.75rem, 2vw, 0.9rem);
   letter-spacing: 2px;
