@@ -131,3 +131,12 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 }
+@media (max-width: 768px) {
+  .select-btn {
+    justify-content: flex-end; /* Push arrow to the right */
+  }
+  
+  .arrow {
+    margin-left: 0; /* Remove left margin on mobile */
+  }
+}
