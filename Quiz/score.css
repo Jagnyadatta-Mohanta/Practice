@@ -1,0 +1,280 @@
+.scorecard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.scorecard-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem) auto;
+  max-width: 800px;
+}
+
+.scorecard-icon {
+  width: clamp(60px, 12vw, 80px);
+  height: clamp(60px, 12vw, 80px);
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(32px, 7vw, 40px);
+}
+
+.scorecard-title {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.scorecard-para {
+  color: var(--text-primary);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+}
+
+.scorecard-table {
+  background: #1a1f35;
+  border-radius: clamp(20px, 4vw, 32px);
+  margin: 0 auto 3.5rem auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#rows {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  padding-bottom: 1rem;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  gap: 1.5rem;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.02);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+#rows::-webkit-scrollbar {
+  width: 8px;
+}
+
+#rows::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#rows::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+#rows::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 120px;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+.table-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.rank-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 0.75rem);
+  font-weight: 900;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.rank-medal {
+  font-size: clamp(18px, 4vw, 22px);
+}
+
+.category-badge {
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-radius: 999px;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  font-weight: 700;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.score-cell {
+  font-weight: 900;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  text-align: center;
+}
+
+.banner {
+  margin-top: 3rem;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: clamp(20px, 4vw, 32px);
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  max-width: 800px;
+  width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-content h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+  opacity: 0.9;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.banner-btn {
+  width: clamp(45px, 10vw, 50px);
+  height: clamp(45px, 10vw, 50px);
+  border-radius: 50%;
+  background: var(--text-primary);
+  color: #3b82f6;
+  font-size: clamp(20px, 4vw, 24px);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.banner-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Mobile Responsive (Small phones) */
+@media (max-width: 480px) {
+  .scorecard-container {
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .scorecard-table {
+    max-width: 100%;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 70px 1fr 80px;
+    padding: 1rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .rank-cell {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .rank-medal {
+    font-size: 16px;
+  }
+
+  .category-badge {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.65rem;
+  }
+
+  .score-cell {
+    font-size: 0.95rem;
+  }
+
+  #rows {
+    max-height: 250px;
+  }
+
+  .banner {
+    max-width: 100%;
+  }
+}
+
+/* Tablet (Medium screens) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .scorecard-table {
+    max-width: 90%;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 90px 1fr 100px;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+  }
+
+  #rows {
+    max-height: 280px;
+  }
+
+  .banner {
+    max-width: 90%;
+  }
+}
+
+/* Desktop (Large screens) */
+@media (min-width: 769px) {
+  .banner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .banner-content {
+    flex: 1;
+  }
+
+  .scorecard-table {
+    max-width: 800px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+  .scorecard-table {
+    max-width: 850px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 120px 1fr 140px;
+    padding: 1.75rem 2.5rem;
+    gap: 2rem;
+  }
+}

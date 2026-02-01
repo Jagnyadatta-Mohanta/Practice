@@ -1,0 +1,46 @@
+.btn {
+  padding: clamp(12px, 2.5vw, 15px) clamp(30px, 6vw, 45px);
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.btn-grad {
+  background-image: var(--btn-gradient);
+  background-size: 200% auto;
+  color: var(--text-primary);
+  transition: background-position 0.5s ease, transform 0.2s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--btn-outline-border);
+  color: var(--text-primary);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--btn-outline-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #f02eac, rgba(172, 16, 144, 0.932));
+  color: var(--text-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #ff3ea5;
+  color: var(--text-primary);
+}

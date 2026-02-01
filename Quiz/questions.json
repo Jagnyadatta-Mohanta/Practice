@@ -1,0 +1,158 @@
+{
+  "html": [
+    {
+      "question": "Which HTML5 semantic element should be used for independent, self-contained content?",
+      "options": ["&lt;section&gt;", "&lt;article&gt;", "&lt;div&gt;", "&lt;aside&gt;"],
+      "correct": 1
+    },
+    {
+      "question": "What is the correct way to specify that an input field must be filled out?",
+      "options": ["&lt;input type='text' validate='required'&gt;", "&lt;input type='text' required&gt;", "&lt;input type='text' mandatory&gt;", "&lt;input type='text' filled&gt;"],
+      "correct": 1
+    },
+    {
+      "question": "Which attribute specifies the relationship between the current document and the linked document?",
+      "options": ["relation", "rel", "href", "type"],
+      "correct": 1
+    },
+    {
+      "question": "What does the <datalist> element define?",
+      "options": ["A list of data types", "Pre-defined options for an input element", "A database connection", "A table structure"],
+      "correct": 1
+    },
+    {
+      "question": "Which HTML5 input type is used for entering a date and time with a time zone?",
+      "options": ["datetime", "datetime-local", "date-time", "time"],
+      "correct": 1
+    },
+    {
+      "question": "What is the purpose of the 'defer' attribute in a script tag?",
+      "options": ["Delays script execution indefinitely", "Executes script after the page has finished parsing", "Prevents script from running", "Runs script before DOM is ready"],
+      "correct": 1
+    },
+    {
+      "question": "Which attribute makes an HTML5 input element read-only?",
+      "options": ["readonly", "disabled", "locked", "read-only"],
+      "correct": 0
+    },
+    {
+      "question": "What is the correct HTML for making a checkbox checked by default?",
+      "options": ["&lt;input type='checkbox' default='checked'&gt;", "&lt;input type='checkbox' checked&gt;", "&lt;input type='checkbox' value='checked'&gt;", "&lt;input type='checkbox' selected&gt;"],
+      "correct": 1
+    },
+    {
+      "question": "Which HTML element is used to define navigation links?",
+      "options": ["&lt;navigation&gt;", "&lt;navbar&gt;", "&lt;nav&gt;", "&lt;navigate&gt;"],
+      "correct": 2
+    },
+    {
+      "question": "What does the 'target=\"_blank\"' attribute do in an anchor tag?",
+      "options": ["Opens link in the same window", "Opens link in a new tab/window", "Disables the link", "Creates a blank link"],
+      "correct": 1
+    }
+  ],
+  "css": [
+    {
+      "question": "What is the CSS Box Model order from inside to outside?",
+      "options": ["Content, Padding, Border, Margin", "Content, Border, Padding, Margin", "Margin, Border, Padding, Content", "Padding, Content, Border, Margin"],
+      "correct": 0
+    },
+    {
+      "question": "Which CSS property is used to create a flexible box layout?",
+      "options": ["flex", "display: flex", "flexbox", "box-flex"],
+      "correct": 1
+    },
+    {
+      "question": "What does the 'z-index' property control?",
+      "options": ["Zoom level", "Stack order of positioned elements", "Element size", "Text alignment"],
+      "correct": 1
+    },
+    {
+      "question": "Which pseudo-class selects every nth child element?",
+      "options": [":nth-element(n)", ":nth-child(n)", ":child(n)", ":every(n)"],
+      "correct": 1
+    },
+    {
+      "question": "What is the default value of the 'display' property for a <span> element?",
+      "options": ["block", "inline", "inline-block", "flex"],
+      "correct": 1
+    },
+    {
+      "question": "Which CSS property is used to create rounded corners?",
+      "options": ["corner-radius", "border-radius", "corner-style", "border-round"],
+      "correct": 1
+    },
+    {
+      "question": "What does 'em' unit represent in CSS?",
+      "options": ["Exact measurement", "Relative to parent element's font size", "Viewport width", "Fixed pixel value"],
+      "correct": 1
+    },
+    {
+      "question": "Which property controls the order of flex items?",
+      "options": ["flex-order", "order", "item-order", "flex-position"],
+      "correct": 1
+    },
+    {
+      "question": "What is the CSS specificity order from lowest to highest?",
+      "options": ["Element, Class, ID", "ID, Class, Element", "Class, Element, ID", "Element, ID, Class"],
+      "correct": 0
+    },
+    {
+      "question": "Which CSS property is used to control the space between lines of text?",
+      "options": ["line-spacing", "line-height", "text-spacing", "line-gap"],
+      "correct": 1
+    }
+  ],
+  "javascript": [
+    {
+      "question": "What will 'console.log(typeof [])' output?",
+      "options": ["array", "object", "undefined", "list"],
+      "correct": 1
+    },
+    {
+      "question": "Which method is used to remove the last element from an array?",
+      "options": ["pop()", "remove()", "delete()", "splice()"],
+      "correct": 0
+    },
+    {
+      "question": "What is the difference between '==' and '===' in JavaScript?",
+      "options": ["No difference", "'==' checks value, '===' checks value and type", "'===' is faster", "'==' is deprecated"],
+      "correct": 1
+    },
+    {
+      "question": "What does the 'this' keyword refer to in JavaScript?",
+      "options": ["The current function", "The global object", "The object that owns the code", "The previous object"],
+      "correct": 2
+    },
+    {
+      "question": "Which method converts a JSON string into a JavaScript object?",
+      "options": ["JSON.parse()", "JSON.stringify()", "JSON.convert()", "JSON.toObject()"],
+      "correct": 0
+    },
+    {
+      "question": "What is a closure in JavaScript?",
+      "options": ["A way to close the browser", "A function with access to its outer scope", "A loop terminator", "A type of variable"],
+      "correct": 1
+    },
+    {
+      "question": "Which array method creates a new array with all elements that pass a test?",
+      "options": ["map()", "filter()", "reduce()", "find()"],
+      "correct": 1
+    },
+    {
+      "question": "What is the output of '2' + 2 in JavaScript?",
+      "options": ["4", "22", "Error", "NaN"],
+      "correct": 1
+    },
+    {
+      "question": "Which keyword is used to handle errors in JavaScript?",
+      "options": ["catch", "error", "handle", "exception"],
+      "correct": 0
+    },
+    {
+      "question": "What does the 'async' keyword do in JavaScript?",
+      "options": ["Makes code run faster", "Makes a function return a Promise", "Delays execution", "Runs code in background"],
+      "correct": 1
+    }
+  ]
+}

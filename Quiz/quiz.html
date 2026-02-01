@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body class="light">
+
+  <header>
+    <h2><a href="index.html">QUIZOMANIA</a></h2>
+    <button class="theme-toggle">🌓</button>
+  </header>
+
+  <main>
+    <div class="quiz-container">
+
+      <div class="quiz-header">
+
+        <div class="quiz-info">
+          <span class="category">HTML5</span>
+          <h1 class="quiz-title">THE CHALLENGE.</h1>
+        </div>
+
+        <div class="timer">
+          <div class="timer-label">TIME LEFT</div>
+          <div class="timer-value">00:30</div>
+        </div>
+
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 20%"></div>
+      </div>
+
+      <div class="question-container">
+        <div class="question-text">
+          Which tag is used to define an internal style sheet?
+        </div>
+
+        <div class="options-grid">
+
+          <div class="option" data-index="0">
+            <div class="option-letter">A</div>
+            <div class="option-text">&lt;script&gt;</div>
+            <div class="check-icon">✓</div>
+          </div>
+
+          <div class="option" data-index="1">
+            <div class="option-letter">B</div>
+            <div class="option-text">&lt;style&gt;</div>
+            <div class="check-icon">✓</div>
+          </div>
+
+          <div class="option" data-index="2">
+            <div class="option-letter">C</div>
+            <div class="option-text">&lt;css&gt;</div>
+            <div class="check-icon">✓</div>
+          </div>
+
+          <div class="option" data-index="3">
+            <div class="option-letter">D</div>
+            <div class="option-text">&lt;link&gt;</div>
+            <div class="check-icon">✓</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="terminate-btn">EXIT</button>
+        <button class="next-btn" disabled>NEXT →</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p id="devpara" class="para">DEVELOPED BY MELO</p>
+  </footer>
+<script src="utils.js"></script>
+<script src="quiz.js"></script>
+<audio id="correct-sound" src="sounds/correct-356013.mp3" preload="auto"></audio>
+<audio id="wrong-sound" src="sounds/wrong-47985.mp3" preload="auto"></audio>
+<audio id="timeout-sound" src="sounds/timeout-90320.mp3" preload="auto"></audio>
+
+</body>
+</html>

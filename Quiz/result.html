@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="result.css">
+</head>
+<body class="light">
+<header>
+  <h2><a href="index.html">QUIZOMANIA</a></h2>
+  <button class="theme-toggle">🌓</button>
+</header>
+
+<main>
+
+  <div class="results-container">
+    <div class="results-header">
+      <div class="status-badge">OPERATION COMPLETE</div>
+      <h1 class="results-title">
+        FINAL SCORE
+      </h1>
+    </div>
+
+    <div class="results-content">
+
+      <div class="score-details">
+        <div style="display: flex; align-items: center; gap: 2rem;">
+          <div class="score-metric">
+            <div class="metric-label">PERCENTAGE</div>
+            <div class="metric-value">80%</div>
+          </div>
+
+           <div class="metrics-divider"></div>
+          
+          <div class="score-metric">
+            <div class="metric-label">CORRECT ANSWERS</div>
+            <div class="metric-value">4/5</div>
+          </div>
+        </div>
+        
+        <div class="result-buttons">
+          <a href="quiz.html" class="btn btn-primary">
+            RETRY
+          </a>
+          <a href="index.html" class="btn btn-secondary">
+            EXIT
+          </a>
+        </div>
+      </div>
+
+      <div class="rank-card">
+        <div class="trophy-icon">🏆</div>
+        <div class="rank-value">RANK A+</div>
+      </div>
+    </div>
+
+  </div>
+<footer>
+<p id="devpara" class="para"><p> DEVELOPED BY MELO</p>
+</footer>
+<script src="utils.js"></script>
+<script src="result.js"></script>
+</body>
+</html>

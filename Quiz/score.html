@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scores</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="score.css">
+</head>
+<body class="light">
+<header>
+  <h2><a href="index.html">QUIZOMANIA</a></h2>
+  <button class="theme-toggle">🌓</button>
+</header>
+
+<main>
+
+  <div class="scorecard-container">
+
+   <div class="back-btn">
+   <a href="index.html"> ← BACK </a>
+   </div>
+
+    <div class="scorecard-header">
+      <div class="scorecard-icon">🏆</div>
+      <h1 class="scorecard-title">Top Performers</h1>
+      <p class="scorecard-para">The brightest minds in web development.</p>
+    </div>
+
+    <div class="scorecard-table">
+      <div class="table-header">
+        <div>Rank</div>
+        <div>Category</div>
+        <div>Score</div>
+      </div>
+      <div id="rows"></div>
+    </div>
+      
+    <div class="banner">
+      <div class="banner-content">
+        <h3>Think you can do better?</h3>
+        <p>Take a quiz now and climb the ranks!</p>
+      </div>
+      <button class="banner-btn">↗</button>
+    </div>
+
+</main>
+
+<footer>
+     <p id="devpara" class="para">DEVELOPED BY MELO</p>
+</footer>
+<script src="utils.js"></script>
+<script src="score.js"></script>
+</body>
+</html>
