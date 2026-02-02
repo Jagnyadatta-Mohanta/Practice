@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'category.html';
     });
   }
+   const clearBtn = document.querySelector('.clear-scores-btn');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', handleClearScores);
+  }
 });
 
 function displayBestScores() {
@@ -55,4 +59,9 @@ function displayBestScores() {
     
     rowsContainer.appendChild(row);
   });
+}
+function handleClearScores() {
+  localStorage.removeItem('bestScores');
+  localStorage.removeItem('latestResult');
+  displayBestScores();
 }

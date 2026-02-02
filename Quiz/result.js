@@ -50,4 +50,22 @@ function displayResults(result) {
       statusBadge.style.background = '#f59e0b';
     }
   }
+
+  // Add feedback message based on score
+  const feedbackText = document.querySelector('.feedback-text');
+  if (feedbackText) {
+    let feedback = '';
+    
+    if (result.accuracy === 100) {
+      feedback = 'Perfect score! You are a true master!';
+    } else if (result.accuracy >= 80) {
+      feedback = 'Great job! You have excellent knowledge!';
+    } else if (result.accuracy >= 40) {
+      feedback = 'Keep practicing! You can do better!';
+    } else {
+      feedback = 'Don\'t give up! Review the basics and try again!';
+    }
+    
+    feedbackText.textContent = feedback;
+  }
 }
