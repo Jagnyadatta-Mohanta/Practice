@@ -1,14 +1,12 @@
-/* ── Page ─────────────────────────────────────────────────── */
 .profile-page {
   background: var(--void);
   min-height: 100vh;
 }
 
-/* ── Profile header section ───────────────────────────────── */
 .profile-header-section {
   background: var(--surface);
   border-bottom: 1px solid var(--edge);
-  padding-top: calc(80px + var(--space-9)); 
+  padding-top: calc(80px + var(--space-9));
 }
 
 .profile-header-inner {
@@ -21,7 +19,6 @@
   flex-wrap: wrap;
 }
 
-/* Avatar */
 .profile-avatar-large {
   width: 88px;
   height: 88px;
@@ -41,7 +38,6 @@
   transition: all 0.3s ease;
 }
 
-/* Meta */
 .profile-meta { flex: 1; min-width: 200px; }
 
 .profile-name {
@@ -84,7 +80,6 @@
   color: var(--text-muted);
 }
 
-/* Part 9: Logout button in top-right */
 .profile-header-cta {
   margin-left: auto;
   align-self: flex-start;
@@ -105,7 +100,6 @@
   background: rgba(230,57,70,0.06) !important;
 }
 
-/* ── Tabs ─────────────────────────────────────────────────── */
 .profile-tabs {
   max-width: 1280px;
   margin: 0 auto;
@@ -137,7 +131,6 @@
 .profile-tab:hover  { color: var(--text-primary); }
 .profile-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-/* ── Body ─────────────────────────────────────────────────── */
 .profile-body {
   max-width: 1280px;
   margin: 0 auto;
@@ -148,7 +141,6 @@
   max-width: 560px;
 }
 
-/* ── Booking history cards ────────────────────────────────── */
 .booking-history-card {
   background: var(--surface);
   border: 1px solid var(--edge-2);
@@ -215,7 +207,6 @@
   flex-shrink: 0;
 }
 
-/* Empty state */
 .profile-empty-state {
   padding: var(--space-11) 0;
   text-align: center;
@@ -234,7 +225,6 @@
 
 .profile-empty-sub { font-size: 14px; }
 
-/* ── Account read-only display (Part 9) ───────────────────── */
 .account-display-card {
   background: var(--surface);
   border: 1px solid var(--edge-2);
@@ -284,7 +274,6 @@
   color: var(--text-muted);
 }
 
-/* Inline text button */
 .btn-link {
   background: none;
   border: none;
@@ -299,7 +288,6 @@
 
 .btn-link:hover { color: var(--gold-bright); }
 
-/* ── Edit Profile form  ───────────────────────────── */
 .ep-section {
   margin-bottom: var(--space-2);
 }
@@ -329,7 +317,6 @@
   gap: var(--space-4);
 }
 
-/* Status message */
 .ep-msg {
   min-height: 20px;
   font-size: 13px;
@@ -358,7 +345,6 @@
   gap: var(--space-3);
 }
 
-/* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 768px) {
   .profile-header-inner {
     flex-direction: column;

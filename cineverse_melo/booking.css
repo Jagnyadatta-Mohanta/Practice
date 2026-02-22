@@ -4,7 +4,6 @@
   padding-top: 80px;
 }
 
-/* ── FILTER BAR ────────────────────────────────────────────── */
 .booking-filter-bar {
   background: var(--surface);
   border-bottom: 1px solid var(--edge-2);
@@ -28,7 +27,8 @@
   min-width: 180px;
 }
 
-.booking-movie-chip-label {
+.booking-movie-chip-label,
+.booking-filter-label {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -66,15 +66,6 @@
   min-width: 140px;
 }
 
-.booking-filter-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-  font-weight: 600;
-  font-family: var(--font-sans);
-}
-
 .booking-input {
   background: var(--surface-2);
   border: 1px solid var(--edge-2);
@@ -106,12 +97,11 @@ select.booking-input {
   cursor: pointer;
 }
 
-select.booking-input option { 
+select.booking-input option {
   background: var(--surface-3);
   color: var(--text-primary);
 }
 
-/* ── DATE STRIP ─────────────────────────────────────────────── */
 .booking-date-strip {
   border-top: 1px solid var(--edge);
   padding: var(--space-4) var(--space-8);
@@ -177,7 +167,6 @@ select.booking-input option {
 
 .date-pill.active .date-pill-mon { color: rgba(5,5,10,0.6); }
 
-/* ── RESULTS BAR ────────────────────────────────────────────── */
 .booking-results-bar {
   max-width: 1280px;
   margin: 0 auto;
@@ -190,12 +179,11 @@ select.booking-input option {
   color: var(--text-muted);
 }
 
-.booking-results-summary strong { 
+.booking-results-summary strong {
   color: var(--text-primary);
   font-weight: 600;
 }
 
-/* ── THEATER LIST ───────────────────────────────────────────── */
 .theater-list {
   max-width: 1280px;
   margin: 0 auto;
@@ -273,7 +261,7 @@ select.booking-input option {
   color: var(--seat-avail);
 }
 
-.theater-avail-badge.available .theater-avail-dot { 
+.theater-avail-badge.available .theater-avail-dot {
   background: var(--seat-avail);
 }
 
@@ -283,7 +271,7 @@ select.booking-input option {
   color: var(--filling);
 }
 
-.theater-avail-badge.filling .theater-avail-dot { 
+.theater-avail-badge.filling .theater-avail-dot {
   background: var(--filling);
 }
 
@@ -293,7 +281,7 @@ select.booking-input option {
   color: var(--seat-booked);
 }
 
-.theater-avail-badge.almost .theater-avail-dot { 
+.theater-avail-badge.almost .theater-avail-dot {
   background: var(--seat-booked);
 }
 
@@ -405,7 +393,6 @@ select.booking-input option {
   font-size: 15px;
 }
 
-/* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .booking-filter-top {
     padding: var(--space-4) var(--space-5);

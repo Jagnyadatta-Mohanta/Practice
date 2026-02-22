@@ -1,13 +1,11 @@
-import { Storage, Auth } from './utils.js';
+import { Storage } from './utils.js';
 import { Header, Footer, buildScrollSection } from './layout.js';
 
 async function init() {
   await Header.init();
   Footer.init();
 
-  const params = new URLSearchParams(window.location.search);
-  const id     = parseInt(params.get('id')) || 1;
-
+  const id = parseInt(new URLSearchParams(window.location.search).get('id')) || 1;
   let movies = [];
   try {
     const res = await fetch('data/movies.json');
@@ -19,20 +17,17 @@ async function init() {
 
   Storage.setMovie(movie);
   renderMovie(movie);
-  buildRecommendations(movie, movies); // Part 8
+  buildRecommendations(movie, movies);
   bindStickyBehavior(movie);
   scrollReveal();
 }
 
-// ── Render movie detail ────────────────────────────────────────
 function renderMovie(m) {
   const q  = s => document.querySelector(s);
   const sa = (s, v) => { const el = q(s); if (el) el.textContent = v; };
 
-  // Banner
   const blur = q('.movie-banner-blur');
   if (blur) blur.style.backgroundImage = `url('${m.banner}')`;
-
   const poster = q('.movie-detail-poster img');
   if (poster) { poster.src = m.poster; poster.alt = m.title; }
 
@@ -43,7 +38,6 @@ function renderMovie(m) {
   sa('.hero-stat-cert',       m.certificate);
   sa('.movie-synopsis',       m.description);
 
-  // Genre badges
   const badgesEl = q('.movie-detail-badges');
   if (badgesEl) {
     badgesEl.innerHTML =
@@ -51,11 +45,9 @@ function renderMovie(m) {
       `<span class="badge badge-cert">${m.certificate}</span>`;
   }
 
-  // Stats
   const langEl = q('.hero-stat-lang');
   if (langEl) langEl.textContent = m.language.slice(0, 2).join(' / ');
 
-  // Cast
   const castTrack = q('.cast-scroll');
   if (castTrack && m.cast?.length) {
     castTrack.innerHTML = m.cast.map(c => `
@@ -66,11 +58,9 @@ function renderMovie(m) {
       </div>`).join('');
   }
 
-  // Director
   const dirEl = q('.movie-director-val');
   if (dirEl) dirEl.textContent = m.director || '—';
 
-  // Info panel
   sa('.movie-info-price-val', `₹${m.price.standard}`);
 
   const infoRows = q('.movie-info-rows');
@@ -89,69 +79,47 @@ function renderMovie(m) {
       </div>`).join('');
   }
 
-  // Book Now buttons
   document.querySelectorAll('.book-now-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      Storage.setMovie(m);
-      window.location.href = `booking.html?movie=${m.id}`;
-    });
+    btn.addEventListener('click', () => { Storage.setMovie(m); window.location.href = `booking.html?movie=${m.id}`; });
   });
 
-  // Sticky CTA
   sa('.movie-sticky-cta-name',  m.title);
   sa('.movie-sticky-cta-price', `From ₹${m.price.standard}`);
-
   document.title = `${m.title} — CINEVERSE`;
 }
 
-// ──  Recommendations ────────────────────────────────────
 function buildRecommendations(currentMovie, allMovies) {
   const wrap = document.querySelector('.movie-recommendations');
   if (!wrap) return;
-
   const scored = allMovies
     .filter(m => m.id !== currentMovie.id && !m.comingSoon)
-    .map(m => ({
-      movie:   m,
-      overlap: m.genre.filter(g => currentMovie.genre.includes(g)).length,
-    }))
+    .map(m => ({ movie: m, overlap: m.genre.filter(g => currentMovie.genre.includes(g)).length }))
     .filter(({ overlap }) => overlap > 0)
     .sort((a, b) => b.overlap - a.overlap || b.movie.rating - a.movie.rating)
     .slice(0, 8)
     .map(({ movie }) => movie);
-
   if (!scored.length) { wrap.hidden = true; return; }
-
-  const primaryGenre = currentMovie.genre[0] || 'Similar';
-  const section = buildScrollSection({
-    id:       'recommendations',
-    title:    'You May Also Like',
-    subtitle: `More ${primaryGenre} films`,
-    movies:   scored,
-  });
-
-  wrap.appendChild(section);
+  wrap.appendChild(buildScrollSection({
+    id: 'recommendations', title: 'You May Also Like',
+    subtitle: `More ${currentMovie.genre[0] || 'Similar'} films`, movies: scored,
+  }));
 }
 
-// ── Sticky CTA bar ─────────────────────────────────────────────
 function bindStickyBehavior(movie) {
   const cta = document.querySelector('.movie-sticky-cta');
   if (!cta) return;
-
   window.addEventListener('scroll', () => {
     const show = window.scrollY > 350;
     cta.style.opacity       = show ? '1' : '0';
     cta.style.transform     = show ? 'translateY(0)' : 'translateY(16px)';
     cta.style.pointerEvents = show ? 'auto' : 'none';
   }, { passive: true });
-
   cta.querySelector('.book-now-btn')?.addEventListener('click', () => {
     Storage.setMovie(movie);
     window.location.href = `booking.html?movie=${movie.id}`;
   });
 }
 
-// ── Scroll reveal ──────────────────────────────────────────────
 function scrollReveal() {
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {

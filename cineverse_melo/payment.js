@@ -12,11 +12,9 @@ function init() {
   const format  = Storage.getFormat() || 'Standard';
   const time    = Storage.getShowtime();
   const pricing = Storage.calculatePricing(movie, format, seats.length);
-
   renderSummary(movie, theater, seats, time, pricing);
   buildMethodTabs();
   bindPayButton(pricing, seats);
-  updateCardPreview();
 }
 
 function renderSummary(movie, theater, seats, time, pricing) {
@@ -24,21 +22,11 @@ function renderSummary(movie, theater, seats, time, pricing) {
   set('.pay-movie-name',   movie?.title || '—');
   set('.pay-theater-info', theater?.name || '—');
   set('.pay-show-info',    `${time || '—'} · ${Storage.getFormat() || 'Standard'}`);
-
-  // Seats
   const seatsEl = document.querySelector('.pay-seats-row');
-  if (seatsEl) {
-    seatsEl.innerHTML = seats.map(s =>
-      `<span class="pay-seat-chip">${s}</span>`
-    ).join('');
-  }
-
-  // Pricing rows
-  set('.pay-row-tickets', `₹${pricing.base}`);
-  set('.pay-row-conv',    `₹${pricing.convenience}`);
+  if (seatsEl) seatsEl.innerHTML = seats.map(s => `<span class="pay-seat-chip">${s}</span>`).join('');
+  set('.pay-row-tickets',      `₹${pricing.base}`);
+  set('.pay-row-conv',         `₹${pricing.convenience}`);
   set('.pay-row-total-amount', `₹${pricing.total}`);
-
-  // Label
   const ticketLabel = document.querySelector('.pay-ticket-label');
   if (ticketLabel) ticketLabel.textContent = `${seats.length} × ₹${pricing.basePerSeat}`;
 }
@@ -54,16 +42,13 @@ function buildMethodTabs() {
   function switchMethod(method) {
     activeMethod = method;
     tabs.forEach(t => t.classList.toggle('active', t.dataset.method === method));
-    Object.entries(panels).forEach(([key, el]) => {
-      if (el) el.style.display = key === method ? 'block' : 'none';
-    });
+    Object.entries(panels).forEach(([key, el]) => { if (el) el.style.display = key === method ? 'block' : 'none'; });
   }
 
   tabs.forEach(tab => tab.addEventListener('click', () => switchMethod(tab.dataset.method)));
   switchMethod('card');
 
-  // Card preview live update
-  const numInput = document.querySelector('#card-number');
+  const numInput  = document.querySelector('#card-number');
   const nameInput = document.querySelector('#card-name');
   const expInput  = document.querySelector('#card-exp');
 
@@ -91,49 +76,48 @@ function buildMethodTabs() {
   });
 }
 
-function updateCardPreview() {
-  // default state
-}
-
 function bindPayButton(pricing, seats) {
-  const btn = document.querySelector('.pay-now-btn');
+  const btn      = document.querySelector('.pay-now-btn');
   const progress = document.querySelector('.pay-progress');
   if (!btn) return;
 
   btn.addEventListener('click', async () => {
-    // Validate
     if (activeMethod === 'card') {
-      const num = document.querySelector('#card-number')?.value?.replace(/\s/g,'');
-      if (!num || num.length < 12) { flashError('Please enter a valid card number'); return; }
+      const num  = document.querySelector('#card-number')?.value?.replace(/\s/g,'');
+      const name = document.querySelector('#card-name')?.value?.trim();
+      const exp  = document.querySelector('#card-exp')?.value?.trim();
+      const cvv  = document.querySelector('#card-cvv')?.value?.trim();
+      if (!num || num.length < 16)   { flashError('Please enter a valid 16-digit card number'); return; }
+      if (!name)                      { flashError('Please enter the cardholder name'); return; }
+      if (!exp || exp.length < 5)     { flashError('Please enter a valid expiry date (MM/YY)'); return; }
+      if (!cvv || cvv.length < 3)     { flashError('Please enter your CVV'); return; }
+      const [mm, yy] = exp.split('/').map(Number);
+      const now = new Date();
+      if (new Date(2000 + yy, mm - 1) < new Date(now.getFullYear(), now.getMonth())) {
+        flashError('Your card has expired'); return;
+      }
+    }
+    if (activeMethod === 'upi') {
+      const upi = document.querySelector('#upi-id')?.value?.trim();
+      if (!upi || !upi.includes('@')) { flashError('Please enter a valid UPI ID (e.g. name@bank)'); return; }
+    }
+    if (activeMethod === 'netbanking') {
+      const bank = document.querySelector('#bank-select')?.value;
+      if (!bank) { flashError('Please select your bank'); return; }
     }
 
-    // Start loading
     btn.disabled = true;
-    const originalHTML = btn.innerHTML;
     btn.innerHTML = `<span class="spinner"></span> Processing payment...`;
+    if (progress) { progress.style.width = '0%'; setTimeout(() => progress.style.width = '100%', 50); }
 
-    if (progress) {
-      progress.style.width = '0%';
-      setTimeout(() => progress.style.width = '100%', 50);
-    }
-
-    // Save booking
     const bookingId = Storage.generateBookingId();
-    const booking = {
-      id: bookingId,
-      movie: Storage.getMovie(),
-      theater: Storage.getTheater(),
-      seats: seats,
-      time: Storage.getShowtime(),
-      format: Storage.getFormat(),
-      total: pricing.total,
-      date: Storage.getDate(),
-      bookedAt: new Date().toISOString(),
-    };
-    Storage.saveToHistory(booking);
+    Storage.saveToHistory({
+      id: bookingId, movie: Storage.getMovie(), theater: Storage.getTheater(),
+      seats, time: Storage.getShowtime(), format: Storage.getFormat(),
+      total: pricing.total, date: Storage.getDate(), bookedAt: new Date().toISOString(),
+    });
     Storage.setBooking({ bookingId });
 
-    // Simulate processing
     await new Promise(r => setTimeout(r, 3000));
     window.location.href = 'confirmation.html';
   });
@@ -150,13 +134,6 @@ function flashError(msg) {
   toast.textContent = msg;
   toast.style.opacity = '1';
   setTimeout(() => toast.style.opacity = '0', 2500);
-}
-
-function bindHeaderScroll() {
-  const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    header?.classList.toggle('scrolled', window.scrollY > 10);
-  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', init);

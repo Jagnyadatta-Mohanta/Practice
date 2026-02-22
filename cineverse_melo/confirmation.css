@@ -5,7 +5,6 @@
   flex-direction: column;
 }
 
-/* Ambient particles */
 .confirm-particles {
   position: absolute;
   inset: 0;
@@ -18,8 +17,10 @@
   border-radius: 50%;
   animation: particleDrift linear infinite;
 }
+.confirm-header {
+  background: var(--confirm-header-bg);
+}
 
-/* Success circle */
 .confirm-circle-wrap {
   position: relative;
   margin-bottom: var(--space-4);
@@ -67,7 +68,6 @@
   animation: drawLine 0.6s ease 0.5s forwards;
 }
 
-/* Heading */
 .confirm-heading-group {
   text-align: center;
   margin-bottom: var(--space-4);
@@ -90,7 +90,6 @@
   color: var(--text-muted);
 }
 
-/* Booking card */
 .confirm-card {
   width: 100%;
   max-width: 520px;
@@ -102,7 +101,6 @@
   animation: fadeUp 0.8s var(--ease-out) 0.5s both;
 }
 
-/* Card gold header */
 .confirm-card-top {
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 40%, var(--gold-mid) 100%);
   padding: var(--space-6) var(--space-7);
@@ -154,7 +152,6 @@
   z-index: 2;
 }
 
-/* Perforated divider */
 .confirm-perforation {
   display: flex;
   align-items: center;
@@ -177,7 +174,6 @@
 .confirm-perforation::before { left: -14px; }
 .confirm-perforation::after  { right: -14px; }
 
-/* Card body */
 .confirm-card-body {
   padding: var(--space-6) var(--space-7);
 }
@@ -215,7 +211,6 @@
   line-height: 1;
 }
 
-/* Bottom note */
 .confirm-note {
   border-top: 1px solid rgba(0,208,132,0.15);
   background: rgba(0,208,132,0.04);
@@ -227,11 +222,6 @@
 }
 
 .confirm-note::before { content: '✓  '; }
-
-
-/* ═══════════════════════════════════════════════════════════════
-   PROFILE.CSS
-═══════════════════════════════════════════════════════════════ */
 
 .profile-page {
   background: var(--void);
@@ -348,7 +338,6 @@
   padding: var(--space-7) var(--space-8);
 }
 
-/* Booking history */
 .booking-history-card {
   background: var(--surface);
   border: 1px solid var(--edge-2);
@@ -406,7 +395,6 @@
   flex-shrink: 0;
 }
 
-/* Minimal header */
 .confirm-header {
   position: fixed;
   top: 0;
@@ -427,9 +415,8 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--space-8);
-} 
+}
 
-/* Main centering layout */
 .confirm-main {
   display: flex;
   flex-direction: column;
@@ -439,20 +426,19 @@
   position: relative;
 }
 
-/* Part 6: Booking card — scrollable */
 .confirm-card {
   width: 100%;
   max-width: 520px;
 
-  /* Scrollable when content overflows on small screens */
+
   max-height: 80vh;
   overflow-y: auto;
   overscroll-behavior: contain;
 
-  /* Custom scrollbar to match theme */
+
   scrollbar-width: thin;
   scrollbar-color: var(--gold-deep) transparent;
-} 
+}
 
 .confirm-card::-webkit-scrollbar {
   width: 4px;
@@ -467,18 +453,15 @@
   border-radius: var(--r-pill);
 }
 
-/* Card body padding */
 .confirm-card-body {
   padding: var(--space-5) var(--space-7);
 }
 
-/* Confirm row — allow text wrapping for long seat lists */
 .confirm-row-val {
   word-break: break-word;
   line-height: 1.5;
 }
 
-/* Action buttons row */
 .confirm-actions {
   display: flex;
   gap: var(--space-4);
@@ -489,7 +472,6 @@
   opacity: 0;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .confirm-card {
     max-height: 60vh;
@@ -522,9 +504,8 @@
   .confirm-ticket-item {
     flex: 1 1 calc(50% - var(--space-3));
   }
-} 
+}
 
-/* Neutralise the default top margin the footer adds on other pages */
 .confirm-page .site-footer {
   margin-top: 0;
 }

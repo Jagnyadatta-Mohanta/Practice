@@ -5,7 +5,6 @@
   flex-direction: column;
 }
 
-/* ── TOP CONTEXT BAR ────────────────────────────────────────── */
 .seats-context-bar {
   background: var(--surface);
   border-bottom: 1px solid var(--edge);
@@ -13,6 +12,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-6);
+   margin-top: 80px;
 }
 
 .seats-context-bar-inner {
@@ -50,7 +50,6 @@
   background: var(--edge-2);
 }
 
-/* ── MAIN LAYOUT ────────────────────────────────────────────── */
 .seats-layout {
   flex: 1;
   display: flex;
@@ -69,7 +68,6 @@
   align-items: center;
 }
 
-/* ── SCREEN ─────────────────────────────────────────────────── */
 .screen-container {
   width: 100%;
   max-width: 620px;
@@ -103,7 +101,6 @@
   margin-top: var(--space-3);
 }
 
-/* ── SEAT GRID ──────────────────────────────────────────────── */
 .seat-grid {
   display: flex;
   flex-direction: column;
@@ -132,7 +129,6 @@
   flex-shrink: 0;
 }
 
-/* Individual seat */
 .seat {
   width: 36px;
   height: 32px;
@@ -149,7 +145,6 @@
   border-bottom: 3px solid transparent;
 }
 
-/* Bottom cushion detail */
 .seat::after {
   content: '';
   position: absolute;
@@ -160,7 +155,6 @@
   border-radius: 0 0 3px 3px;
 }
 
-/* Available */
 .seat.available {
   background: rgba(0,201,122,0.12);
   border: 1px solid rgba(0,201,122,0.3);
@@ -176,7 +170,6 @@
   box-shadow: 0 6px 20px rgba(0,201,122,0.25);
 }
 
-/* Selected */
 .seat.selected {
   background: rgba(240,192,64,0.85);
   border: 1px solid var(--seat-sel);
@@ -187,7 +180,6 @@
 }
 .seat.selected::after { background: #b88c00; }
 
-/* Booked */
 .seat.booked {
   background: rgba(230,57,70,0.12);
   border: 1px solid rgba(230,57,70,0.2);
@@ -198,7 +190,6 @@
 .seat.booked::after { background: rgba(230,57,70,0.2); }
 .seat.booked:hover { transform: none; }
 
-/* ── SEAT LEGEND ────────────────────────────────────────────── */
 .seat-legend {
   display: flex;
   gap: var(--space-6);
@@ -233,7 +224,6 @@
   font-weight: 600;
 }
 
-/* ── BOOKING SUMMARY PANEL ──────────────────────────────────── */
 .booking-summary {
   width: 320px;
   flex-shrink: 0;
@@ -283,7 +273,6 @@
   color: var(--text-muted);
 }
 
-/* Seats display */
 .summary-seats-section {
   padding: var(--space-3) var(--space-5);
   border-bottom: 1px solid var(--edge);
@@ -323,7 +312,6 @@
   font-family: var(--font-serif);
 }
 
-/* Price breakdown */
 .summary-price-section {
   padding: var(--space-3) var(--space-4);
 }
@@ -349,7 +337,6 @@
   font-weight: 500;
 }
 
-/* Total */
 .summary-total-row {
   display: flex;
   justify-content: space-between;
@@ -373,11 +360,10 @@
   line-height: 1;
 }
 
-/* CTA */
 .summary-cta {
   padding: var(--space-3) var(--space-4);
 }
-/* Format selector in context bar */
+
 .format-selector {
   margin-left: auto;
   display: flex;
@@ -388,14 +374,12 @@
   padding: var(--space-5) var(--space-6) var(--space-6);
 }
 
-/* Summary proceed button text update transition */
 .summary-proceed-btn {
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   font-size: 14px;
   letter-spacing: 0.06em;
 }
 
-/* Legend swatch classes*/
 .swatch-available {
   background: rgba(0,201,122,0.15);
   border: 1px solid rgba(0,201,122,0.4);
@@ -420,12 +404,10 @@
   height: 20px;
 }
 
-/* Context bar below header */
 .seats-context-bar {
   position: static;
 }
 
-/* Responsive seats layout */
 @media (max-width: 960px) {
   .seats-layout {
     flex-direction: column;
