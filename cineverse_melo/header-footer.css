@@ -794,6 +794,10 @@
     display: none;
   }
 
+.theme-toggle { display: none; }
+
+.header-login-btn { padding: 9px 14px; font-size: 11px; }
+
   .footer-body {
     grid-template-columns: 1fr;
   }
@@ -828,6 +832,9 @@
   .header-search-wrap {
     display: none;
   }
+  
+.header-login-btn { padding: 8px 12px; font-size: 10px; }
+.logo-text { font-size: 18px; }
 
   .logo-text {
     font-size: 20px;

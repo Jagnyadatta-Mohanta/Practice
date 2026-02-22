@@ -404,12 +404,15 @@ body {
   }
 
   .movie-content-grid {
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr;
   }
 
   .movie-info-panel {
     position: static;
-    margin: 0 var(--space-5);
+    order: -1; 
+    margin: 0 var(--space-5) var(--space-5);
     overflow: visible;
     max-height: none;
   }
