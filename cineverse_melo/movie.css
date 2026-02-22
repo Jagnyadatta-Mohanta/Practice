@@ -11,8 +11,8 @@
   position: absolute;
   inset: -6%;
   background-size: cover;
-  background-position: center 20%;
-  filter: blur(20px) saturate(0.6) brightness(0.7);
+  background-position: center 20%; 
+  filter: blur(1px) saturate(0.9) brightness(0.7);
   transform: scale(1.12);
 }
 
@@ -389,6 +389,7 @@
 
   .movie-info-panel {
     position: static;
+    margin: 0 var(--space-5);
   }
 }
 
@@ -427,6 +428,13 @@
   .movie-synopsis {
     font-size: 16px;
   }
+  .movie-recommendations {
+    margin-top: var(--space-4) !important;
+  }
+
+  .movie-recommendations .scroll-section {
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -441,5 +449,8 @@
   .movie-detail-stats {
     flex-wrap: wrap;
     gap: var(--space-2);
+  }
+    .movie-info-panel {
+    margin: 0 var(--space-3); 
   }
 }
