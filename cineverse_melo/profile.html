@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — CINEVERSE</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body class="profile-page">
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ═══ HEADER ══════════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cineverse home">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <span class="logo-text">CINEVERSE</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+      <div class="header-actions">
+        <div class="header-search-placeholder" aria-label="Search"></div>
+        <div class="header-auth-placeholder"></div>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ═══ PROFILE HEADER ════════════════════════════════════ -->
+  <div class="profile-header-section">
+    <div class="profile-header-inner">
+
+      <!-- Avatar — initials injected by JS -->
+      <div class="profile-avatar-large" aria-hidden="true">?</div>
+
+      <div class="profile-meta">
+        <h1 class="profile-name">—</h1>
+        <p class="profile-email">—</p>
+        <div class="profile-stats-row" aria-label="Your stats">
+          <div class="profile-stat-item">
+            <span class="profile-stat-val stat-bookings">0</span>
+            <span class="profile-stat-label">Bookings</span>
+          </div>
+          <div class="profile-stat-item">
+            <span class="profile-stat-val stat-spent">₹0</span>
+            <span class="profile-stat-label">Total Spent</span>
+          </div>
+          <div class="profile-stat-item">
+            <span class="profile-stat-val stat-films">0</span>
+            <span class="profile-stat-label">Films</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-header-cta">
+        <button class="btn btn-ghost btn-sm profile-logout-btn" aria-label="Log out of your account">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+          Logout
+        </button>
+      </div>
+    </div>
+
+    <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+      <button class="profile-tab active" data-panel="bookings"
+        role="tab" aria-selected="true">Booking History</button>
+      <button class="profile-tab" data-panel="account"
+        role="tab" aria-selected="false">Account</button>
+      <button class="profile-tab" data-panel="edit"
+        role="tab" aria-selected="false">Edit Profile</button>
+    </div>
+  </div>
+
+  <!-- ═══ PROFILE BODY ══════════════════════════════════════ -->
+  <div class="profile-body">
+
+    <!-- ── Bookings panel ─────────────────────────────────── -->
+    <div class="profile-panel" data-panel="bookings" role="tabpanel" aria-label="Booking history">
+      <div class="booking-history-list" aria-live="polite">
+        <!-- Injected by renderHistory() -->
+      </div>
+    </div>
+
+    <div class="profile-panel" data-panel="account" hidden role="tabpanel" aria-label="Account details">
+      <div class="profile-panel-inner">
+        <div class="section-label" style="margin-bottom:var(--space-6)">
+          <h2 class="section-label__text">Account Details</h2>
+          <span class="section-label__sub">Your registered information</span>
+        </div>
+
+        <div class="account-display-card">
+          <!-- Rows injected by setupAccountTab() in profile.js -->
+          <div class="account-display-rows"></div>
+        </div>
+
+        <p class="profile-hint-text">
+          Need to update something?
+          <button class="btn-link js-goto-edit" aria-label="Switch to Edit Profile tab">
+            Go to Edit Profile →
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <div class="profile-panel" data-panel="edit" hidden role="tabpanel" aria-label="Edit profile">
+      <div class="profile-panel-inner">
+
+        <div class="section-label" style="margin-bottom:var(--space-6)">
+          <h2 class="section-label__text">Edit Profile</h2>
+          <span class="section-label__sub">Changes save to your account and reflect immediately</span>
+        </div>
+
+        <!-- Personal details -->
+        <div class="ep-section">
+          <div class="ep-section-title">Personal Details</div>
+          <div class="ep-fields">
+            <div class="input-group">
+              <label class="input-label" for="ep-name">Full Name</label>
+              <input type="text" id="ep-name" class="input-field"
+                placeholder="Your name" autocomplete="name">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ep-email">Email Address</label>
+              <input type="email" id="ep-email" class="input-field"
+                placeholder="you@email.com" autocomplete="email">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ep-phone">Phone Number</label>
+              <input type="tel" id="ep-phone" class="input-field"
+                placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ep-city">City</label>
+              <input type="text" id="ep-city" class="input-field"
+                placeholder="e.g. Mumbai" autocomplete="address-level2">
+            </div>
+          </div>
+        </div>
+
+        <div class="gold-divider" style="margin:var(--space-7) 0"></div>
+
+        <!-- Change password -->
+
+        <div class="ep-section">
+          <div class="ep-section-title">Change Password</div>
+          <p class="ep-section-hint">Leave all three fields blank if you don't want to change your password.</p>
+          <div class="ep-fields">
+            <div class="input-group">
+              <label class="input-label" for="ep-cur-pass">Current Password</label>
+              <input type="password" id="ep-cur-pass" class="input-field"
+                placeholder="••••••••" autocomplete="current-password">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ep-new-pass">New Password</label>
+              <input type="password" id="ep-new-pass" class="input-field"
+                placeholder="Min 6 characters" autocomplete="new-password">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ep-con-pass">Confirm New Password</label>
+              <input type="password" id="ep-con-pass" class="input-field"
+                placeholder="Repeat new password" autocomplete="new-password">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback message -->
+        <p class="ep-msg" aria-live="polite"></p>
+
+        <!-- Save -->
+        <div class="ep-actions">
+          <button class="btn btn-primary ep-save-btn">Save Changes</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /profile-body -->
+</main>
+
+<!-- Footer injected by footer.js -->
+<div id="site-footer-root"></div>
+
+<script type="module" src="profile.js"></script>
+</body>
+</html>

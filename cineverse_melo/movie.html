@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Detail — CINEVERSE</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="movie.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cineverse home">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <span class="logo-text">CINEVERSE</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+      <div class="header-actions">
+        <div class="header-search-placeholder" aria-label="Search"></div>
+        <div class="header-auth-placeholder"></div>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ CINEMATIC BANNER ════════════════════════════════════ -->
+<section class="movie-banner" aria-label="Film banner">
+  <div class="movie-banner-blur" aria-hidden="true"></div>
+  <div class="movie-banner-overlay-1" aria-hidden="true"></div>
+  <div class="movie-banner-overlay-2" aria-hidden="true"></div>
+
+  <div class="movie-banner-content">
+    <!-- Poster -->
+    <div class="movie-detail-poster">
+      <img src="" alt="" loading="eager">
+    </div>
+
+    <!-- Info -->
+    <div class="movie-banner-info">
+      <div class="movie-detail-badges">
+        <!-- Injected by JS -->
+      </div>
+
+      <h1 class="movie-detail-title">—</h1>
+      <p class="movie-detail-tagline">—</p>
+
+      <div class="movie-detail-stats">
+        <div class="movie-detail-stat rating">
+          <span class="movie-detail-stat-icon">★</span>
+          <span class="movie-detail-stat-val hero-stat-rating">—</span>
+          <span class="t-muted t-xs" style="margin-left:4px">IMDb</span>
+        </div>
+        <span class="movie-detail-stat-div" aria-hidden="true"></span>
+
+        <div class="movie-detail-stat">
+          <svg class="movie-detail-stat-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="movie-detail-stat-val hero-stat-duration">—</span>
+        </div>
+        <span class="movie-detail-stat-div" aria-hidden="true"></span>
+
+        <div class="movie-detail-stat">
+          <svg class="movie-detail-stat-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span class="movie-detail-stat-val hero-stat-lang">English</span>
+        </div>
+        <span class="movie-detail-stat-div" aria-hidden="true"></span>
+
+        <div class="movie-detail-stat">
+          <span class="movie-detail-stat-val hero-stat-cert" style="background:var(--surface-4);padding:2px 8px;border-radius:3px;font-size:12px">UA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick CTA on banner -->
+    <div style="flex-shrink:0;align-self:flex-end">
+      <button class="btn btn-primary btn-xl book-now-btn">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MOVIE BODY ══════════════════════════════════════════ -->
+<main class="movie-body" id="main-content">
+  <div class="movie-content-grid">
+
+    <!-- ── Left column ── -->
+    <div>
+      <!-- Synopsis -->
+      <div class="anim-fade-up" style="opacity:0;transform:translateY(24px);transition:all 0.6s var(--ease-out)">
+        <div class="section-label">
+          <h2 class="section-label__text">Synopsis</h2>
+        </div>
+        <p class="movie-synopsis">—</p>
+      </div>
+
+      <!-- Cast -->
+      <div class="cast-section anim-fade-up delay-2" style="opacity:0;transform:translateY(24px);transition:all 0.6s var(--ease-out) 0.2s">
+        <div class="section-label">
+          <h2 class="section-label__text">Cast</h2>
+        </div>
+        <!-- Cards injected by JS -->
+        <div class="h-scroll cast-scroll" role="list" aria-label="Cast members"></div>
+      </div>
+
+      <!-- Director -->
+      <div class="gold-divider"></div>
+      <div style="display:flex;gap:var(--space-8)" class="anim-fade-up delay-3">
+        <div>
+          <div class="t-muted t-xs t-upper" style="margin-bottom:var(--space-2)">Director</div>
+          <div class="movie-director-val" style="font-size:17px;font-weight:500;color:var(--text-primary)">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right column: info panel ── -->
+    <aside class="movie-info-panel" aria-label="Booking information">
+      <div class="movie-info-panel-header">
+        <div class="movie-info-panel-title">Tickets from</div>
+        <div class="movie-info-price-display">
+          <span class="movie-info-price-from">₹</span>
+          <span class="movie-info-price-val">—</span>
+        </div>
+      </div>
+
+      <div class="movie-info-rows">
+        <!-- Rows injected by JS -->
+      </div>
+
+      <div class="movie-info-panel-cta">
+        <button class="btn btn-primary btn-full btn-lg book-now-btn">
+          Book Now
+        </button>
+        <p class="t-muted t-xs" style="text-align:center;margin-top:var(--space-3)">
+          Free cancellation up to 30 min before showtime
+        </p>
+      </div>
+    </aside>
+  </div>
+</main>
+<!-- buildRecommendations() in movie.js injects a scroll section here -->
+<div class="movie-recommendations" style="margin-top:var(--space-5)"></div>
+
+<!-- Sticky floating CTA (shows on scroll) -->
+<div class="movie-sticky-cta" style="opacity:0;transition:all 0.4s var(--ease-out)" role="complementary" aria-label="Quick booking">
+  <div class="movie-sticky-cta-info">
+    <span class="movie-sticky-cta-name">—</span>
+    <span class="movie-sticky-cta-price">—</span>
+  </div>
+  <button class="btn btn-primary book-now-btn">
+    Book Now
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </button>
+</div>
+
+<div id="site-footer-root"></div>
+
+<script type="module" src="movie.js"></script>
+</body>
+</html>

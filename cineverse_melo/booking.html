@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tickets — CINEVERSE</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page">
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ═══ HEADER ══════════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cineverse home">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <span class="logo-text">CINEVERSE</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+      <div class="header-actions">
+        <div class="header-search-placeholder" aria-label="Search"></div>
+        <div class="header-auth-placeholder"></div>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ══ FILTER BAR ══════════════════════════════════════════ -->
+  <div class="booking-filter-bar" role="search" aria-label="Filter showings">
+    <div class="booking-filter-top">
+
+      <!-- Film chip -->
+      <div class="booking-movie-chip">
+        <div class="booking-movie-chip-label">Film</div>
+        <div class="booking-movie-chip-val">—</div>
+      </div>
+
+      <!-- Language -->
+      <div class="booking-filter-field">
+        <label for="lang-select" class="booking-filter-label">Language</label>
+        <select id="lang-select" class="booking-input" aria-label="Select language">
+          <option>English</option>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Telugu</option>
+        </select>
+      </div>
+
+      <!-- City search -->
+      <div class="booking-filter-field">
+        <label for="city-input" class="booking-filter-label">City</label>
+        <input type="search"
+          id="city-input"
+          class="booking-input"
+          placeholder="Search city..."
+          autocomplete="off"
+          aria-label="Search for a city">
+      </div>
+
+      <!-- Theater search -->
+      <div class="booking-filter-field" style="flex:1.5">
+        <label for="theater-input" class="booking-filter-label">Cinema</label>
+        <input type="search"
+          id="theater-input"
+          class="booking-input"
+          placeholder="Search theater..."
+          autocomplete="off"
+          aria-label="Search for a theater">
+      </div>
+    </div>
+
+    <!-- Date strip -->
+    <div class="booking-date-strip" role="group" aria-label="Select date">
+      <!-- Injected by booking.js -->
+    </div>
+  </div>
+
+  <!-- ══ RESULTS BAR — PART 4: Removed Sort/Filter buttons ══ -->
+  <div class="booking-results-bar">
+    <p class="booking-results-summary" aria-live="polite">Loading cinemas...</p>
+  </div>
+
+  <!-- ══ THEATER LIST ════════════════════════════════════════ -->
+  <div class="theater-list" aria-live="polite" aria-label="Available theaters">
+    <div class="theater-loading">Loading cinemas...</div>
+  </div>
+
+</main>
+
+<div id="site-footer-root"></div>
+<script type="module" src="booking.js"></script>
+</body>
+</html>

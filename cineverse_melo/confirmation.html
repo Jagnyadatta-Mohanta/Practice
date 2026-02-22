@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — CINEVERSE</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="confirmation.css">
+</head>
+<body class="confirm-page">
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- Ambient particles -->
+<div class="confirm-particles" aria-hidden="true"></div>
+
+<!-- Minimal header -->
+<header class="confirm-header" role="banner">
+  <div class="confirm-header-inner">
+    <a href="index.html" class="logo" aria-label="Cineverse home">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <span class="logo-text">CINEVERSE</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+  </div>
+</header>
+
+<main id="main-content" class="confirm-main">
+
+  <!-- Success checkmark -->
+  <div class="confirm-circle-wrap" aria-hidden="true">
+    <div class="confirm-circle">
+      <div class="confirm-ring"></div>
+      <div class="confirm-ring-2"></div>
+      <div class="confirm-check">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <circle cx="26" cy="26" r="24" stroke="rgba(0,208,132,0.3)" stroke-width="1"/>
+          <polyline class="confirm-check-path"
+            points="16,28 23,35 37,20"
+            stroke="var(--success)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            stroke-dasharray="100"
+            stroke-dashoffset="100"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Heading -->
+  <div class="confirm-heading-group" role="status" aria-live="polite">
+    <h1 class="confirm-title">Booking Confirmed</h1>
+    <p class="confirm-subtitle">Enjoy the show. Your seats are waiting.</p>
+  </div>
+
+  <article class="confirm-card" aria-label="Booking details">
+
+    <!-- Gold header with booking ID -->
+    <div class="confirm-card-top">
+      <div class="confirm-booking-id-label">Booking ID</div>
+      <div class="confirm-booking-id">—</div>
+    </div>
+
+    <!-- Perforation -->
+    <div class="confirm-perforation" aria-hidden="true"></div>
+
+    <div class="confirm-card-body">
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">🎬 Film</span>
+        <span class="confirm-row-val confirm-movie-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">🏛 Cinema</span>
+        <span class="confirm-row-val confirm-theater-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">📍 Location</span>
+        <span class="confirm-row-val confirm-location-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">🗓 Date</span>
+        <span class="confirm-row-val confirm-date-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">🕐 Show Time</span>
+        <span class="confirm-row-val confirm-time-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">💺 Seats</span>
+        <span class="confirm-row-val confirm-seats-val">—</span>
+      </div>
+
+      <div class="confirm-row">
+        <span class="confirm-row-key">💰 Total Paid</span>
+        <span class="confirm-row-val highlight confirm-total-val">—</span>
+      </div>
+
+    </div>
+
+    <div class="confirm-note">
+      Confirmation sent to your registered email address
+    </div>
+  </article>
+
+  <!-- Action buttons -->
+  <div class="confirm-actions">
+    <a href="index.html"   class="btn btn-secondary">Explore More Films</a>
+    <a href="profile.html" class="btn btn-ghost">My Bookings</a>
+  </div>
+
+</main>
+
+<div id="site-footer-root"></div>
+<script type="module" src="confirmation.js"></script>
+</body>
+</html>

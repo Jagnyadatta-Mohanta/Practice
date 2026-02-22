@@ -1,0 +1,425 @@
+/* ── Page ─────────────────────────────────────────────────── */
+.profile-page {
+  background: var(--void);
+  min-height: 100vh;
+}
+
+/* ── Profile header section ───────────────────────────────── */
+.profile-header-section {
+  background: var(--surface);
+  border-bottom: 1px solid var(--edge);
+  padding-top: calc(80px + var(--space-9)); 
+}
+
+.profile-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-7);
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-7);
+  flex-wrap: wrap;
+}
+
+/* Avatar */
+.profile-avatar-large {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
+  border: 2px solid rgba(201,168,76,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.18);
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+
+/* Meta */
+.profile-meta { flex: 1; min-width: 200px; }
+
+.profile-name {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.profile-email {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.profile-stats-row {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.profile-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-stat-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.profile-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+/* Part 9: Logout button in top-right */
+.profile-header-cta {
+  margin-left: auto;
+  align-self: flex-start;
+  padding-top: var(--space-2);
+}
+
+.profile-logout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(230,57,70,0.75) !important;
+  border-color: rgba(230,57,70,0.25) !important;
+}
+
+.profile-logout-btn:hover {
+  color: rgba(230,57,70,1) !important;
+  border-color: rgba(230,57,70,0.5) !important;
+  background: rgba(230,57,70,0.06) !important;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.profile-tabs {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--edge);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.profile-tab {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font-family: var(--font-sans);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.profile-tab:hover  { color: var(--text-primary); }
+.profile-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ── Body ─────────────────────────────────────────────────── */
+.profile-body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-8) var(--space-10);
+}
+
+.profile-panel-inner {
+  max-width: 560px;
+}
+
+/* ── Booking history cards ────────────────────────────────── */
+.booking-history-card {
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  margin-bottom: var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.booking-history-card:hover {
+  border-color: var(--edge-3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  transform: translateY(-1px);
+}
+
+.booking-history-poster {
+  width: 72px;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.booking-history-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-history-info {
+  flex: 1;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.booking-history-movie { flex: 1; min-width: 140px; }
+
+.booking-history-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.booking-history-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.booking-history-seats {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.booking-history-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* Empty state */
+.profile-empty-state {
+  padding: var(--space-11) 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.profile-empty-icon { font-size: 48px; margin-bottom: var(--space-5); }
+
+.profile-empty-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-style: italic;
+  color: var(--text-body);
+  margin-bottom: var(--space-3);
+}
+
+.profile-empty-sub { font-size: 14px; }
+
+/* ── Account read-only display (Part 9) ───────────────────── */
+.account-display-card {
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+}
+
+.account-display-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--edge);
+}
+
+.account-row:last-child { border-bottom: none; }
+
+.account-row-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.account-row-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.account-row-val {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.profile-hint-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Inline text button */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.btn-link:hover { color: var(--gold-bright); }
+
+/* ── Edit Profile form  ───────────────────────────── */
+.ep-section {
+  margin-bottom: var(--space-2);
+}
+
+.ep-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--edge);
+}
+
+.ep-section-hint {
+  font-size: 13px;
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.ep-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Status message */
+.ep-msg {
+  min-height: 20px;
+  font-size: 13px;
+  margin-top: var(--space-4);
+  border-radius: var(--r-sm);
+  transition: all 0.15s ease;
+}
+
+.ep-msg--error {
+  color: rgba(230,57,70,0.9);
+  background: rgba(230,57,70,0.06);
+  border: 1px solid rgba(230,57,70,0.2);
+  padding: 10px 14px;
+}
+
+.ep-msg--success {
+  color: var(--success);
+  background: rgba(0,208,132,0.06);
+  border: 1px solid rgba(0,208,132,0.2);
+  padding: 10px 14px;
+}
+
+.ep-actions {
+  margin-top: var(--space-6);
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .profile-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .profile-header-cta { margin-left: 0; }
+
+  .profile-stats-row { gap: var(--space-5); flex-wrap: wrap; }
+
+  .profile-body { padding: var(--space-6) var(--space-5); }
+
+  .booking-history-info { flex-direction: column; align-items: flex-start; }
+
+  .profile-tabs {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .profile-tabs::-webkit-scrollbar { display: none; }
+}
+
+@media (max-width: 480px) {
+  .profile-header-inner {
+    padding: var(--space-4);
+  }
+
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+  }
+
+  .profile-name {
+    font-size: 24px;
+  }
+
+  .profile-stats-row {
+    gap: var(--space-4);
+  }
+
+  .profile-stat-value {
+    font-size: 22px;
+  }
+
+  .profile-body {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .booking-history-card {
+    padding: var(--space-4);
+  }
+
+  .booking-history-actions {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .booking-history-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

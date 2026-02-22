@@ -1,0 +1,538 @@
+.booking-page {
+  background: var(--void);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+/* ── FILTER BAR ────────────────────────────────────────────── */
+.booking-filter-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--edge-2);
+}
+
+.booking-filter-top {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-8);
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.booking-movie-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.booking-movie-chip-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.booking-movie-chip-val {
+  background: var(--surface-3);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 20px;
+  border-radius: var(--r-md);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--edge-2);
+}
+
+.booking-movie-chip-val::before {
+  content: '🎬';
+  font-size: 14px;
+}
+
+.booking-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 140px;
+}
+
+.booking-filter-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.booking-input {
+  background: var(--surface-2);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-md);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 11px 16px;
+  outline: none;
+  transition: all var(--t-fast);
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.booking-input:focus {
+  border-color: var(--gold-mid);
+  background: var(--surface-3);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
+}
+
+.booking-input::placeholder { color: var(--text-faint); }
+
+select.booking-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23706c66' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+select.booking-input option { 
+  background: var(--surface-3);
+  color: var(--text-primary);
+}
+
+/* ── DATE STRIP ─────────────────────────────────────────────── */
+.booking-date-strip {
+  border-top: 1px solid var(--edge);
+  padding: var(--space-4) var(--space-8);
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+}
+
+.booking-date-strip::-webkit-scrollbar { display: none; }
+
+.date-pill {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-md);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--t-base) var(--ease-out);
+  font-family: var(--font-sans);
+  min-width: 70px;
+}
+
+.date-pill:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+
+.date-pill.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.date-pill-day {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.date-pill.active .date-pill-day { color: rgba(5,5,10,0.6); }
+
+.date-pill-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  font-family: var(--font-sans);
+}
+
+.date-pill.active .date-pill-num { color: var(--void); }
+
+.date-pill-mon {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.date-pill.active .date-pill-mon { color: rgba(5,5,10,0.6); }
+
+/* ── RESULTS BAR ────────────────────────────────────────────── */
+.booking-results-bar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-8);
+}
+
+.booking-results-summary {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.booking-results-summary strong { 
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── THEATER LIST ───────────────────────────────────────────── */
+.theater-list {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-9);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.theater-card {
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: all var(--t-base) var(--ease-out);
+  padding: 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  animation: fadeUp 0.5s var(--ease-out) both;
+}
+
+.theater-card:hover {
+  border-color: var(--edge-3);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+
+.theater-card-header {
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--edge);
+  background: var(--surface);
+}
+
+.theater-name {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.theater-location {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.theater-avail-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+}
+
+.theater-avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.theater-avail-badge.available {
+  background: rgba(0,201,122,0.1);
+  border: 1px solid rgba(0,201,122,0.25);
+  color: var(--seat-avail);
+}
+
+.theater-avail-badge.available .theater-avail-dot { 
+  background: var(--seat-avail);
+}
+
+.theater-avail-badge.filling {
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.25);
+  color: var(--filling);
+}
+
+.theater-avail-badge.filling .theater-avail-dot { 
+  background: var(--filling);
+}
+
+.theater-avail-badge.almost {
+  background: rgba(230,57,70,0.1);
+  border: 1px solid rgba(230,57,70,0.25);
+  color: var(--seat-booked);
+}
+
+.theater-avail-badge.almost .theater-avail-dot { 
+  background: var(--seat-booked);
+}
+
+.theater-card-body {
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.timing-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-md);
+  padding: 9px 18px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease-out);
+}
+
+.timing-chip:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  color: var(--text-primary);
+}
+
+.timing-chip.selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--void);
+  font-weight: 600;
+}
+
+.timing-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.theater-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--edge);
+}
+
+.theater-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--void);
+  border: none;
+  border-radius: var(--r-md);
+  padding: 10px 22px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all var(--t-base) var(--ease-out);
+}
+
+.theater-book-btn:hover {
+  background: var(--gold-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+}
+
+.theater-book-btn:active {
+  transform: translateY(0);
+}
+
+.theater-card--active {
+  border-color: var(--gold);
+  box-shadow: 0 8px 40px rgba(201,168,76,0.2);
+}
+
+.format-pills {
+  display: flex;
+  gap: var(--space-2);
+  margin-left: var(--space-2);
+}
+
+.format-pill {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--edge-2);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+.theater-empty,
+.theater-loading {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 15px;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .booking-filter-top {
+    padding: var(--space-4) var(--space-5);
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .booking-movie-chip,
+  .booking-filter-field {
+    min-width: calc(50% - var(--space-2));
+    flex: 1 1 calc(50% - var(--space-2));
+  }
+
+  .booking-date-strip {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .booking-results-bar {
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .theater-list {
+    padding: 0 var(--space-5) var(--space-7);
+  }
+
+  .theater-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .theater-card-body {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .theater-card-actions {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .theater-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-filter-top {
+    padding: var(--space-3) var(--space-4);
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .booking-movie-chip,
+  .booking-filter-field {
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .booking-date-strip {
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .date-pill {
+    min-width: 58px;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .date-pill-num {
+    font-size: 16px;
+  }
+
+  .booking-results-bar {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .theater-list {
+    padding: 0 var(--space-4) var(--space-7);
+    gap: var(--space-3);
+  }
+
+  .theater-card {
+    border-radius: var(--r-lg);
+  }
+
+  .theater-card-header {
+    padding: var(--space-3) var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .theater-card-body {
+    padding: var(--space-3) var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .theater-card-actions {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .theater-name {
+    font-size: 15px;
+  }
+
+  .timing-chips-row {
+    gap: var(--space-2);
+  }
+
+  .timing-chip {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .theater-book-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .format-pills {
+    margin-left: 0;
+    margin-top: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .showtime-chip {
+    padding: var(--space-2) var(--space-3);
+    font-size: 12px;
+  }
+}

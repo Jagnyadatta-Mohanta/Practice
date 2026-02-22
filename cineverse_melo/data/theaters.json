@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "name": "IMAX PVR Prestige",
+    "city": "Delhi",
+    "location": "Connaught Place, New Delhi",
+    "formats": ["IMAX", "Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "5:00 PM", "8:30 PM", "11:45 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Recliner Seats", "Food Court"]
+  },
+  {
+    "id": 2,
+    "name": "Cinepolis Luxe",
+    "city": "Hyderabad",
+    "location": "Banjara Hills, Hyderabad",
+    "formats": ["Premium", "Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:15 PM", "9:45 PM"],
+    "availability": "filling",
+    "amenities": ["Recliner Seats", "Bistro", "Valet Parking"]
+  },
+  {
+    "id": 3,
+    "name": "PVR Director's Cut",
+    "city": "Mumbai",
+    "location": "Juhu, Mumbai",
+    "formats": ["Premium", "Standard"],
+    "timings": ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM"],
+    "availability": "almost",
+    "amenities": ["Fine Dining", "Bar", "Concierge"]
+  },
+  {
+    "id": 4,
+    "name": "Inox Insignia",
+    "city": "Bengaluru",
+    "location": "Koramangala, Bengaluru",
+    "formats": ["IMAX", "Premium", "Standard"],
+    "timings": ["12:00 PM", "3:30 PM", "7:00 PM", "10:30 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Gaming Zone", "Food Court"]
+  },
+  {
+    "id": 5,
+    "name": "Miraj Cinemas Gold",
+    "city": "Pune",
+    "location": "FC Road, Pune",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:00 AM", "1:00 PM", "4:00 PM", "7:30 PM", "10:45 PM"],
+    "availability": "available",
+    "amenities": ["Lounge", "Snack Bar"]
+  },
+  {
+    "id": 6,
+    "name": "SPI Cinemas Palazzo",
+    "city": "Chennai",
+    "location": "Anna Nagar, Chennai",
+    "formats": ["IMAX", "Standard"],
+    "timings": ["9:30 AM", "12:45 PM", "4:00 PM", "7:30 PM", "10:45 PM"],
+    "availability": "filling",
+    "amenities": ["Dolby Atmos", "Food Court", "Parking"]
+  },
+  {
+    "id": 7,
+    "name": "Divyajyoti Multiplex",
+    "city": "Angul",
+    "location": "Angul Town, Odisha",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Snack Counter", "Parking"]
+  },
+  {
+    "id": 8,
+    "name": "Asha Talkies",
+    "city": "Angul",
+    "location": "Main Road, Angul",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:30 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 9,
+    "name": "VK Central Multiplex",
+    "city": "Rayagada",
+    "location": "VK Central Mall, Rayagada",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "5:15 PM", "8:45 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Food Court", "Parking"]
+  },
+  {
+    "id": 10,
+    "name": "Ashok Talkies",
+    "city": "Rayagada",
+    "location": "Station Road, Rayagada",
+    "formats": ["Standard"],
+    "timings": ["11:15 AM", "2:45 PM", "6:15 PM", "9:15 PM"],
+    "availability": "almost",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 11,
+    "name": "SR Nova Cinemas",
+    "city": "Jeypore",
+    "location": "Market Area, Jeypore",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:00 AM", "1:30 PM", "5:00 PM", "8:30 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Snack Counter"]
+  },
+  {
+    "id": 12,
+    "name": "Celebration Cineplex",
+    "city": "Jeypore",
+    "location": "Bus Stand Road, Jeypore",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 13,
+    "name": "Eylex Cinemas",
+    "city": "Jharsuguda",
+    "location": "Sarbahal Road, Jharsuguda",
+    "formats": ["Standard", "Premium"],
+    "timings": ["11:00 AM", "2:15 PM", "6:00 PM", "9:45 PM"],
+    "availability": "almost",
+    "amenities": ["Dolby Sound", "Food Court", "Parking"]
+  },
+  {
+    "id": 14,
+    "name": "Shiva Miniplex",
+    "city": "Jharsuguda",
+    "location": "Main Market, Jharsuguda",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:15 PM", "7:00 PM", "10:00 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 15,
+    "name": "Barbil Talkies",
+    "city": "Barbil",
+    "location": "Main Road, Barbil",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:00 PM", "6:30 PM", "9:30 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 16,
+    "name": "PJ Movies",
+    "city": "Barbil",
+    "location": "Mining Road, Barbil",
+    "formats": ["Standard"],
+    "timings": ["11:30 AM", "2:45 PM", "6:15 PM", "9:15 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 17,
+    "name": "Saraswati Multiplex",
+    "city": "Jajpur",
+    "location": "Jajpur Road, Odisha",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "4:45 PM", "8:00 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Snack Counter", "Parking"]
+  },
+  {
+    "id": 18,
+    "name": "Jagannath Cine Palace",
+    "city": "Jajpur",
+    "location": "Byasanagar, Jajpur",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 19,
+    "name": "Rukmini Talkies",
+    "city": "Brahmapur",
+    "location": "Main Road, Brahmapur",
+    "formats": ["Standard"],
+    "timings": ["10:00 AM", "1:30 PM", "4:30 PM", "7:30 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Snack Counter"]
+  },
+  {
+    "id": 20,
+    "name": "Payal Talkies",
+    "city": "Brahmapur",
+    "location": "Gandhinagar, Brahmapur",
+    "formats": ["Standard", "Premium"],
+    "timings": ["11:15 AM", "2:45 PM", "6:15 PM", "9:45 PM"],
+    "availability": "almost",
+    "amenities": ["Dolby Sound", "Parking"]
+  },
+  {
+    "id": 21,
+    "name": "Janata Cinema Hall",
+    "city": "Puri",
+    "location": "Grand Road, Puri",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:30 PM", "7:00 PM", "10:00 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 22,
+    "name": "Debashis Cinema Hall",
+    "city": "Puri",
+    "location": "Station Road, Puri",
+    "formats": ["Standard"],
+    "timings": ["11:30 AM", "2:45 PM", "6:15 PM", "9:30 PM"],
+    "availability": "available",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 23,
+    "name": "PVR Plutone Mall",
+    "city": "Rourkela",
+    "location": "Plutone Mall, Rourkela",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "5:15 PM", "8:45 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Food Court", "Parking"]
+  },
+  {
+    "id": 24,
+    "name": "CineCaarnival",
+    "city": "Rourkela",
+    "location": "Cross Road Mall, Rourkela",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 25,
+    "name": "Roxy Cinema Hall",
+    "city": "Baripada",
+    "location": "Main Road, Baripada",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:00 PM", "6:30 PM", "9:30 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 26,
+    "name": "Utkal Cinema",
+    "city": "Baripada",
+    "location": "Bazar Area, Baripada",
+    "formats": ["Standard"],
+    "timings": ["11:15 AM", "2:45 PM", "6:15 PM", "9:15 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 27,
+    "name": "MovieEX",
+    "city": "Balasore",
+    "location": "OT Road, Balasore",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:45 AM", "2:00 PM", "5:30 PM", "9:00 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Sound", "Food Court"]
+  },
+  {
+    "id": 28,
+    "name": "Balasore Talkies",
+    "city": "Balasore",
+    "location": "Station Road, Balasore",
+    "formats": ["Standard"],
+    "timings": ["11:30 AM", "3:00 PM", "6:30 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 29,
+    "name": "Madhav Theatre",
+    "city": "Bhadrak",
+    "location": "Randia, Bhadrak",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:30 PM", "7:00 PM", "10:00 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 30,
+    "name": "Trishul Cinema Hall",
+    "city": "Bhadrak",
+    "location": "Main Road, Bhadrak",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 31,
+    "name": "PVR Utkal Galleria",
+    "city": "Bhubaneswar",
+    "location": "Utkal Galleria Mall, Bhubaneswar",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:00 AM", "1:15 PM", "4:30 PM", "7:45 PM", "11:00 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Food Court", "Parking"]
+  },
+  {
+    "id": 32,
+    "name": "INOX Symphony Mall",
+    "city": "Bhubaneswar",
+    "location": "Symphony Mall, Bhubaneswar",
+    "formats": ["Standard"],
+    "timings": ["11:30 AM", "2:45 PM", "6:15 PM", "9:45 PM"],
+    "availability": "filling",
+    "amenities": ["Dolby Sound", "Snack Counter"]
+  },
+  {
+    "id": 33,
+    "name": "INOX SGBL Square",
+    "city": "Cuttack",
+    "location": "SGBL Square Mall, Cuttack",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "5:15 PM", "8:45 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Food Court", "Parking"]
+  },
+  {
+    "id": 34,
+    "name": "Sangam Multiplex",
+    "city": "Cuttack",
+    "location": "Link Road, Cuttack",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 35,
+    "name": "Cinepolis Esplanade One",
+    "city": "Bhubaneswar",
+    "location": "Esplanade One Mall, Rasulgarh",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:15 AM", "1:30 PM", "4:45 PM", "8:00 PM", "11:15 PM"],
+    "availability": "available",
+    "amenities": ["Dolby Atmos", "Food Court", "Parking"]
+  },
+  {
+    "id": 36,
+    "name": "INOX DN Regalia",
+    "city": "Bhubaneswar",
+    "location": "DN Regalia Mall, Patrapada",
+    "formats": ["Standard", "Premium"],
+    "timings": ["10:30 AM", "1:45 PM", "5:00 PM", "8:15 PM"],
+    "availability": "filling",
+    "amenities": ["Dolby Sound", "Snack Counter", "Parking"]
+  },
+  {
+    "id": 37,
+    "name": "Maharaja Cinema",
+    "city": "Bhubaneswar",
+    "location": "Saheed Nagar",
+    "formats": ["Standard"],
+    "timings": ["11:00 AM", "2:30 PM", "6:00 PM", "9:30 PM"],
+    "availability": "almost",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 38,
+    "name": "Jayashree Talkies",
+    "city": "Cuttack",
+    "location": "Buxi Bazaar, Cuttack",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:15 PM", "6:30 PM", "9:45 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 39,
+    "name": "Samrat Cinema Hall",
+    "city": "Cuttack",
+    "location": "Badambadi, Cuttack",
+    "formats": ["Standard"],
+    "timings": ["11:30 AM", "2:45 PM", "6:15 PM", "9:30 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  },
+  {
+    "id": 40,
+    "name": "Brundaban Talkies",
+    "city": "Cuttack",
+    "location": "College Square, Cuttack",
+    "formats": ["Standard"],
+    "timings": ["12:15 PM", "3:30 PM", "6:45 PM", "10:00 PM"],
+    "availability": "almost",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 41,
+    "name": "Laxmi Talkies",
+    "city": "Talcher",
+    "location": "Main Road, Talcher",
+    "formats": ["Standard"],
+    "timings": ["12:00 PM", "3:00 PM", "6:30 PM", "9:30 PM"],
+    "availability": "available",
+    "amenities": ["Snack Counter"]
+  },
+  {
+    "id": 42,
+    "name": "Ganesh Cinema Hall",
+    "city": "Talcher",
+    "location": "Hatatota, Talcher",
+    "formats": ["Standard"],
+    "timings": ["11:15 AM", "2:45 PM", "6:15 PM", "9:15 PM"],
+    "availability": "filling",
+    "amenities": ["Parking"]
+  }
+]

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Seats — CINEVERSE</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="seats.css">
+  <style>
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-5px); }
+      40%      { transform: translateX(5px); }
+      60%      { transform: translateX(-3px); }
+      80%      { transform: translateX(3px); }
+    }
+  </style>
+</head>
+<body class="seats-page">
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ═══ HEADER ══════════════════════════════════════════════ -->
+<header class="site-header scrolled" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Cineverse home">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <span class="logo-text">CINEVERSE</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"   class="nav-link">Films</a></li>
+        <li><a href="booking.html" class="nav-link">Back to Cinemas</a></li>
+      </ul>
+      <div class="header-actions">
+        <div class="header-search-placeholder" aria-label="Search"></div>
+        <div class="header-auth-placeholder"></div>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ CONTEXT BAR ════════════════════════════════════════════ -->
+<div class="seats-context-bar" aria-label="Booking context">
+  <div class="seats-context-bar-inner">
+
+    <div class="seats-context-item">
+      <span class="seats-context-label">Film</span>
+      <span class="seats-context-val ctx-movie">—</span>
+    </div>
+    <div class="seats-context-divider" aria-hidden="true"></div>
+
+    <div class="seats-context-item">
+      <span class="seats-context-label">Cinema</span>
+      <span class="seats-context-val ctx-theater">—</span>
+    </div>
+    <div class="seats-context-divider" aria-hidden="true"></div>
+
+    <div class="seats-context-item">
+      <span class="seats-context-label">Show</span>
+      <span class="seats-context-val ctx-time">—</span>
+    </div>
+    <div class="seats-context-divider" aria-hidden="true"></div>
+
+    <div class="seats-context-item">
+      <span class="seats-context-label">Format</span>
+      <span class="seats-context-val ctx-format">Standard</span>
+    </div>
+
+    <!-- Format selector pills -->
+    <div class="format-selector" role="group" aria-label="Select format">
+      <button class="format-select-btn active btn btn-ghost btn-sm" data-format="Standard">Standard</button>
+      <button class="format-select-btn btn btn-ghost btn-sm"        data-format="Premium">Premium</button>
+      <button class="format-select-btn btn btn-ghost btn-sm"        data-format="IMAX">IMAX</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN LAYOUT ════════════════════════════════════════════ -->
+<main class="seats-layout" id="main-content">
+
+  <!-- ── Seat grid column ── -->
+  <div class="seats-main">
+
+    <!-- Screen -->
+    <div class="screen-container" aria-label="Screen location">
+      <div class="screen-line" aria-hidden="true"></div>
+      <div class="screen-glow" aria-hidden="true"></div>
+      <p class="screen-label">Screen — All eyes this way</p>
+    </div>
+
+    <!-- Seat grid — injected by seats.js -->
+    <div class="seat-grid" role="group" aria-label="Seat map"></div>
+
+    <!-- Legend -->
+    <div class="seat-legend" role="list" aria-label="Seat legend">
+      <div class="seat-legend-item" role="listitem">
+        <div class="seat-legend-swatch swatch-available" aria-hidden="true"></div>
+        Available
+      </div>
+      <div class="seat-legend-item" role="listitem">
+        <div class="seat-legend-swatch swatch-selected" aria-hidden="true"></div>
+        Selected
+      </div>
+      <div class="seat-legend-item" role="listitem">
+        <div class="seat-legend-swatch swatch-booked" aria-hidden="true"></div>
+        Booked
+      </div>
+    </div>
+
+    <!-- Limit note -->
+    <p class="seat-limit-note">
+      Maximum <span>6 seats</span> per booking
+    </p>
+  </div>
+
+  <!-- ── Booking Summary Panel ── -->
+  <aside class="booking-summary" aria-label="Booking summary">
+    <div class="booking-summary-card">
+
+      <div class="summary-header">
+        <div class="summary-header-label">Your Booking</div>
+        <div class="summary-movie-name">—</div>
+        <div class="summary-theater-name">—</div>
+        <div class="summary-showtime">—</div>
+      </div>
+
+      <!-- Selected seats -->
+      <div class="summary-seats-section">
+        <div class="summary-section-label">Selected Seats</div>
+        <div class="summary-seats-display" aria-live="polite">
+          <span class="summary-empty">Select your seats</span>
+        </div>
+      </div>
+
+      <div class="summary-price-section">
+        <div class="summary-price-row">
+          <span class="summary-price-key summary-ticket-label">0 × ₹0</span>
+          <span class="summary-price-val summary-base-price">—</span>
+        </div>
+        <div class="summary-price-row">
+          <span class="summary-price-key">Convenience Fee (4%)</span>
+          <span class="summary-price-val summary-conv-fee">—</span>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="summary-total-row">
+        <span class="summary-total-label">Total</span>
+        <span class="summary-total-amount" aria-live="polite">₹0</span>
+      </div>
+
+      <div class="summary-cta">
+        <button class="btn btn-primary btn-full btn-lg summary-proceed-btn btn-disabled" disabled>
+          Select Seats First
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+</main>
+
+<div id="site-footer-root"></div>
+<script type="module" src="seats.js"></script>
+</body>
+</html>

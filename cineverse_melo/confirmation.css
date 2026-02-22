@@ -1,0 +1,553 @@
+.confirm-page {
+  background: var(--void);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ambient particles */
+.confirm-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particleDrift linear infinite;
+}
+
+/* Success circle */
+.confirm-circle-wrap {
+  position: relative;
+  margin-bottom: var(--space-4);
+  animation: bounceIn 0.8s var(--ease-spring) both;
+}
+
+.confirm-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,208,132,0.15) 0%, transparent 70%);
+  border: 1.5px solid rgba(0,208,132,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    0 0 40px rgba(0,208,132,0.2),
+    0 0 100px rgba(0,208,132,0.08);
+}
+
+.confirm-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,208,132,0.15);
+  animation: spin 8s linear infinite;
+}
+
+.confirm-ring-2 {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,208,132,0.08);
+  animation: spin 12s linear infinite reverse;
+}
+
+.confirm-check svg {
+  display: block;
+}
+
+.confirm-check-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 0.6s ease 0.5s forwards;
+}
+
+/* Heading */
+.confirm-heading-group {
+  text-align: center;
+  margin-bottom: var(--space-4);
+  animation: fadeUp 0.7s var(--ease-out) 0.3s both;
+}
+
+.confirm-title {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--text-hero);
+  margin-bottom: var(--space-3);
+  letter-spacing: 0.01em;
+}
+
+.confirm-subtitle {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Booking card */
+.confirm-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-float);
+  animation: fadeUp 0.8s var(--ease-out) 0.5s both;
+}
+
+/* Card gold header */
+.confirm-card-top {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 40%, var(--gold-mid) 100%);
+  padding: var(--space-6) var(--space-7);
+  position: relative;
+  overflow: hidden;
+}
+
+.confirm-card-top::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.confirm-card-top::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.08);
+}
+
+.confirm-booking-id-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(5,5,10,0.55);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.confirm-booking-id {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 0.14em;
+  color: var(--void);
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* Perforated divider */
+.confirm-perforation {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2px;
+  background: var(--edge);
+}
+
+.confirm-perforation::before,
+.confirm-perforation::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--void);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.confirm-perforation::before { left: -14px; }
+.confirm-perforation::after  { right: -14px; }
+
+/* Card body */
+.confirm-card-body {
+  padding: var(--space-6) var(--space-7);
+}
+
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--edge);
+}
+.confirm-row:last-child { border-bottom: none; }
+
+.confirm-row-key {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  flex-shrink: 0;
+  padding-right: var(--space-4);
+}
+
+.confirm-row-val {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: right;
+  max-width: 60%;
+  line-height: 1.4;
+}
+
+.confirm-row-val.highlight {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+/* Bottom note */
+.confirm-note {
+  border-top: 1px solid rgba(0,208,132,0.15);
+  background: rgba(0,208,132,0.04);
+  padding: var(--space-5) var(--space-7);
+  text-align: center;
+  font-size: 12px;
+  color: rgba(0,208,132,0.7);
+  letter-spacing: 0.04em;
+}
+
+.confirm-note::before { content: '✓  '; }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PROFILE.CSS
+═══════════════════════════════════════════════════════════════ */
+
+.profile-page {
+  background: var(--void);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.profile-header-section {
+  background: var(--surface);
+  border-bottom: 1px solid var(--edge);
+  padding: var(--space-9) 0 0;
+}
+
+.profile-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-8) var(--space-7);
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-7);
+}
+
+.profile-avatar-large {
+  width: 96px;
+  height: 96px;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold-mid));
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.2);
+}
+
+.profile-name {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.profile-email {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.profile-stats-row {
+  display: flex;
+  gap: var(--space-7);
+}
+
+.profile-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.profile-stat-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.profile-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--edge);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+
+.profile-tab {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-family: var(--font-sans);
+  transition: all var(--t-fast);
+}
+.profile-tab:hover { color: var(--text-primary); }
+.profile-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.profile-body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-8);
+}
+
+/* Booking history */
+.booking-history-card {
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  margin-bottom: var(--space-4);
+  transition: all var(--t-base) var(--ease-out);
+}
+
+.booking-history-card:hover {
+  border-color: var(--edge-3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.booking-history-poster {
+  width: 80px;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.booking-history-poster img { width: 100%; height: 100%; object-fit: cover; }
+
+.booking-history-info {
+  flex: 1;
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.booking-history-movie { flex: 1; }
+.booking-history-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.booking-history-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.booking-history-seats {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.booking-history-price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+/* Minimal header */
+.confirm-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--edge);
+  background: rgba(5,5,10,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.confirm-header-inner {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-8);
+} 
+
+/* Main centering layout */
+.confirm-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px var(--space-8) var(--space-9);
+  flex: 1;
+  position: relative;
+}
+
+/* Part 6: Booking card — scrollable */
+.confirm-card {
+  width: 100%;
+  max-width: 520px;
+
+  /* Scrollable when content overflows on small screens */
+  max-height: 80vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  /* Custom scrollbar to match theme */
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-deep) transparent;
+} 
+
+.confirm-card::-webkit-scrollbar {
+  width: 4px;
+}
+
+.confirm-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.confirm-card::-webkit-scrollbar-thumb {
+  background: var(--gold-deep);
+  border-radius: var(--r-pill);
+}
+
+/* Card body padding */
+.confirm-card-body {
+  padding: var(--space-5) var(--space-7);
+}
+
+/* Confirm row — allow text wrapping for long seat lists */
+.confirm-row-val {
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+/* Action buttons row */
+.confirm-actions {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s var(--ease-out) 0.8s both;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .confirm-card {
+    max-height: 60vh;
+  }
+
+  .confirm-main {
+    padding: 100px var(--space-5) var(--space-7);
+  }
+
+  .confirm-title {
+    font-size: 32px;
+  }
+
+  .confirm-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .confirm-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .confirm-ticket-row {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .confirm-ticket-item {
+    flex: 1 1 calc(50% - var(--space-3));
+  }
+} 
+
+/* Neutralise the default top margin the footer adds on other pages */
+.confirm-page .site-footer {
+  margin-top: 0;
+}
+
+@media (max-width: 480px) {
+  .confirm-main {
+    padding: 80px var(--space-4) var(--space-6);
+  }
+
+  .confirm-title {
+    font-size: 26px;
+  }
+
+  .confirm-card {
+    max-height: 55vh;
+  }
+
+  .confirm-ticket-item {
+    flex: 1 1 100%;
+  }
+
+  .confirm-qr {
+    width: 100px;
+    height: 100px;
+  }
+}
