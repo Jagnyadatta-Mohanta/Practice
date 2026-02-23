@@ -113,8 +113,71 @@
 
   <!-- Action buttons -->
   <div class="confirm-actions">
+    <button class="btn btn-primary" id="download-ticket-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Ticket
+    </button>
     <a href="index.html"   class="btn btn-secondary">Explore More Films</a>
     <a href="profile.html" class="btn btn-ghost">My Bookings</a>
+  </div>
+
+  <!-- Ticket modal for download/print -->
+  <div id="ticket-modal" class="ticket-modal-overlay" hidden>
+    <div class="ticket-modal-card" id="ticket-print-area">
+      <div class="ticket-modal-header">
+        <div class="ticket-modal-logo">
+          <div class="logo-mark" aria-hidden="true"></div>
+          <span class="logo-text">CINEVERSE</span>
+        </div>
+        <div class="ticket-modal-id-wrap">
+          <div class="ticket-modal-id-label">Booking ID</div>
+          <div class="ticket-modal-id confirm-booking-id-print">—</div>
+        </div>
+      </div>
+      <div class="ticket-modal-perforation" aria-hidden="true"></div>
+      <div class="ticket-modal-body">
+        <div class="ticket-modal-poster-wrap">
+          <img class="ticket-modal-poster" src="" alt="">
+        </div>
+        <div class="ticket-modal-details">
+          <div class="ticket-modal-movie">—</div>
+          <div class="ticket-modal-rows">
+            <div class="ticket-modal-row"><span class="tmr-key">🏛 Cinema</span><span class="tmr-val ticket-theater">—</span></div>
+            <div class="ticket-modal-row"><span class="tmr-key">🗓 Date</span><span class="tmr-val ticket-date">—</span></div>
+            <div class="ticket-modal-row"><span class="tmr-key">🕐 Show</span><span class="tmr-val ticket-time">—</span></div>
+            <div class="ticket-modal-row"><span class="tmr-key">💺 Seats</span><span class="tmr-val ticket-seats">—</span></div>
+            <div class="ticket-modal-row"><span class="tmr-key">💰 Paid</span><span class="tmr-val ticket-total">—</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ticket-modal-footer">
+        <div class="ticket-modal-qr" aria-label="QR code placeholder">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="26" height="26" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <rect x="8" y="8" width="14" height="14" fill="currentColor"/>
+            <rect x="36" y="2" width="26" height="26" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <rect x="42" y="8" width="14" height="14" fill="currentColor"/>
+            <rect x="2" y="36" width="26" height="26" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+            <rect x="8" y="42" width="14" height="14" fill="currentColor"/>
+            <rect x="36" y="36" width="6" height="6" fill="currentColor"/>
+            <rect x="46" y="36" width="6" height="6" fill="currentColor"/>
+            <rect x="56" y="36" width="6" height="6" fill="currentColor"/>
+            <rect x="36" y="46" width="6" height="6" fill="currentColor"/>
+            <rect x="46" y="56" width="6" height="6" fill="currentColor"/>
+            <rect x="56" y="46" width="6" height="6" fill="currentColor"/>
+            <rect x="56" y="56" width="6" height="6" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="ticket-modal-note">Present this ticket at the cinema entrance</div>
+      </div>
+    </div>
+    <div class="ticket-modal-actions">
+      <button class="btn btn-primary" id="print-ticket-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Download Ticket
+      </button>
+      <button class="btn btn-ghost" id="close-ticket-modal-btn">Close</button>
+    </div>
   </div>
 
 </main>

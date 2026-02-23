@@ -777,6 +777,27 @@
   .filter-bar-inner {
     gap: var(--space-3);
   }
+
+  .scroll-header {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .scroll-title {
+    font-size: 22px;
+  }
+
+  .scroll-subtitle {
+    font-size: 10px;
+  }
+
+  .scroll-controls {
+    display: none;
+  }
+
+  .scroll-section {
+    padding: 0 var(--space-4);
+  }
 }
 
 @media (max-width: 480px) {

@@ -153,10 +153,29 @@ function renderSummary() {
     btn.classList.add('btn-disabled');
     btn.disabled = true;
   }
+
+  // Update sticky mobile bar
+  const stickyBar  = document.getElementById('seats-sticky-bar');
+  const stickyBtn  = stickyBar?.querySelector('.seats-sticky-btn');
+  const stickySeats = stickyBar?.querySelector('.seats-sticky-seats');
+  const stickyTotal = stickyBar?.querySelector('.seats-sticky-total');
+  if (stickyBar) {
+    if (count > 0) {
+      if (stickySeats) stickySeats.textContent = seatsArr.join(', ');
+      if (stickyTotal) stickyTotal.textContent  = `₹${pricing.total}`;
+      if (stickyBtn)  { stickyBtn.textContent = 'Proceed to Pay'; stickyBtn.disabled = false; }
+      stickyBar.classList.add('visible');
+    } else {
+      if (stickySeats) stickySeats.textContent = 'No seats selected';
+      if (stickyTotal) stickyTotal.textContent  = '₹0';
+      if (stickyBtn)  { stickyBtn.textContent = 'Proceed to Pay'; stickyBtn.disabled = true; }
+      stickyBar.classList.remove('visible');
+    }
+  }
 }
 
 function bindProceedBtn() {
-  document.querySelector('.summary-proceed-btn')?.addEventListener('click', () => {
+  const proceed = () => {
     if (selectedSeats.size === 0) return;
     const user = Auth.getCurrentUser();
     if (!user) {
@@ -164,7 +183,9 @@ function bindProceedBtn() {
       return;
     }
     window.location.href = 'payment.html';
-  });
+  };
+  document.querySelector('.summary-proceed-btn')?.addEventListener('click', proceed);
+  document.querySelector('.seats-sticky-btn')?.addEventListener('click', proceed);
 }
 
 function shakeElement(el) {

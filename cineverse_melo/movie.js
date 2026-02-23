@@ -106,14 +106,18 @@ function buildRecommendations(currentMovie, allMovies) {
 }
 
 function bindStickyBehavior(movie) {
-  const cta = document.querySelector('.movie-sticky-cta');
+  const cta    = document.querySelector('.movie-sticky-cta');
+  const banner = document.querySelector('.movie-banner');
   if (!cta) return;
-  window.addEventListener('scroll', () => {
-    const show = window.scrollY > 350;
-    cta.style.opacity       = show ? '1' : '0';
-    cta.style.transform     = show ? 'translateY(0)' : 'translateY(16px)';
-    cta.style.pointerEvents = show ? 'auto' : 'none';
-  }, { passive: true });
+
+  if (banner) {
+    const obs = new IntersectionObserver(
+      ([entry]) => cta.classList.toggle('visible', !entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    obs.observe(banner);
+  }
+
   cta.querySelector('.book-now-btn')?.addEventListener('click', () => {
     Storage.setMovie(movie);
     window.location.href = `booking.html?movie=${movie.id}`;

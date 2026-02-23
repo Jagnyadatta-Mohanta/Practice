@@ -76,7 +76,7 @@ function renderHistory() {
     return;
   }
 
-  container.innerHTML = history.map(b => `
+  container.innerHTML = history.map((b, i) => `
     <div class="booking-history-card">
       <div class="booking-history-poster">
         <img src="${b.movie?.poster || ''}" alt="${b.movie?.title || ''}" loading="lazy">
@@ -90,9 +90,84 @@ function renderHistory() {
         <div class="booking-history-seats">
           ${(b.seats || []).map(s => `<span class="badge badge-gold" style="font-size:11px">${s}</span>`).join('')}
         </div>
-        <div class="booking-history-price">₹${b.total || 0}</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:var(--space-3);flex-shrink:0">
+          <div class="booking-history-price">₹${b.total || 0}</div>
+          <button class="btn btn-ghost btn-sm view-ticket-btn" data-index="${i}" style="font-size:11px;padding:6px 12px;white-space:nowrap">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Ticket
+          </button>
+        </div>
       </div>
     </div>`).join('');
+
+  container.querySelectorAll('.view-ticket-btn').forEach(btn => {
+    btn.addEventListener('click', () => openTicketModal(history[+btn.dataset.index]));
+  });
+
+  bindTicketModal();
+}
+
+function openTicketModal(b) {
+  const modal = document.getElementById('ticket-modal');
+  if (!modal) return;
+
+  const set = (field, val) => {
+    const el = modal.querySelector(`[data-field="${field}"]`);
+    if (el) el.textContent = val || '—';
+  };
+
+  modal.querySelector('.ticket-modal-id-val').textContent   = b.id || '—';
+  modal.querySelector('.ticket-modal-movie').textContent    = b.movie?.title || '—';
+  set('theater', b.theater?.name);
+  set('time',    b.time ? `${b.time}${b.format ? ' · ' + b.format : ''}` : null);
+  set('seats',   b.seats?.length ? b.seats.join(', ') : null);
+  set('total',   b.total ? `₹${b.total}` : null);
+
+  const displayDate = b.date
+    ? new Date(b.date).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
+    : '—';
+  set('date', displayDate);
+
+  const poster = modal.querySelector('.ticket-modal-poster');
+  if (poster) { poster.src = b.movie?.poster || ''; poster.alt = b.movie?.title || ''; }
+
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function bindTicketModal() {
+  document.getElementById('close-ticket-modal')?.addEventListener('click', closeTicketModal);
+  document.getElementById('print-ticket-btn')?.addEventListener('click', () => {
+    closeTicketModal();
+    showToast('🎟 Ticket downloaded successfully!');
+  });
+  document.getElementById('ticket-modal')?.addEventListener('click', e => {
+    if (e.target.id === 'ticket-modal') closeTicketModal();
+  });
+}
+
+function closeTicketModal() {
+  const modal = document.getElementById('ticket-modal');
+  if (modal) modal.hidden = true;
+  document.body.style.overflow = '';
+}
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = `
+    position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);
+    background:var(--surface);border:1px solid var(--gold);color:var(--text-primary);
+    padding:14px 24px;border-radius:40px;font-size:14px;font-weight:500;
+    box-shadow:0 8px 32px rgba(0,0,0,0.4),0 0 0 1px rgba(201,168,76,0.2);
+    z-index:99999;opacity:0;transition:all 0.3s var(--ease-out);white-space:nowrap;
+  `;
+  document.body.appendChild(t);
+  requestAnimationFrame(() => { t.style.opacity = '1'; t.style.transform = 'translateX(-50%) translateY(0)'; });
+  setTimeout(() => {
+    t.style.opacity = '0'; t.style.transform = 'translateX(-50%) translateY(10px)';
+    setTimeout(() => t.remove(), 300);
+  }, 3000);
 }
 
 function setupAccountTab() {

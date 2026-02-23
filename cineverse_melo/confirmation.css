@@ -532,3 +532,196 @@
     height: 100px;
   }
 }
+
+/* ── Ticket Modal ──────────────────────────────────────────── */
+.ticket-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  animation: fadeIn 0.2s ease;
+}
+
+.ticket-modal-overlay[hidden] { display: none; }
+
+.ticket-modal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 460px;
+  animation: scaleIn 0.25s var(--ease-spring);
+}
+
+.ticket-modal-card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--edge-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+
+.ticket-modal-header {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 40%, var(--gold-mid) 100%);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-modal-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ticket-modal-logo-wrap .logo-text {
+  font-size: 16px;
+  color: var(--void);
+  font-weight: 800;
+}
+
+.ticket-modal-logo-wrap .logo-mark {
+  width: 28px;
+  height: 28px;
+}
+
+.ticket-modal-id-wrap { text-align: right; }
+
+.ticket-modal-id-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(5,5,10,0.5);
+  margin-bottom: 3px;
+}
+
+.ticket-modal-id-val {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: var(--void);
+  line-height: 1;
+}
+
+.ticket-modal-perforation {
+  height: 2px;
+  background: var(--edge);
+  position: relative;
+}
+.ticket-modal-perforation::before,
+.ticket-modal-perforation::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: var(--void);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ticket-modal-perforation::before { left: -11px; }
+.ticket-modal-perforation::after  { right: -11px; }
+
+.ticket-modal-body {
+  display: flex;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+}
+
+.ticket-modal-poster {
+  width: 80px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  flex-shrink: 0;
+  background: var(--surface-2);
+}
+
+.ticket-modal-details { flex: 1; min-width: 0; }
+
+.ticket-modal-movie {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.ticket-modal-rows { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.ticket-modal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 12px;
+}
+
+.tmr-key { color: var(--text-muted); flex-shrink: 0; }
+.tmr-val { color: var(--text-primary); font-weight: 500; text-align: right; word-break: break-word; }
+
+.ticket-modal-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--edge);
+  background: var(--surface-2);
+}
+
+.ticket-modal-qr {
+  color: var(--text-primary);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.ticket-modal-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.ticket-modal-actions {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.ticket-modal-actions .btn { flex: 1; justify-content: center; }
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .ticket-modal-box { max-width: 100%; }
+  .ticket-modal-body { flex-direction: column; }
+  .ticket-modal-poster { width: 100%; height: 160px; }
+  .ticket-modal-actions { flex-direction: column; }
+}
+
+/* ── Print styles ──────────────────────────────────────────── */
+@media print {
+  body > *:not(#ticket-modal) { display: none !important; }
+  .ticket-modal-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+  }
+  .ticket-modal-box { max-width: 100%; }
+  .ticket-modal-actions { display: none !important; }
+}
